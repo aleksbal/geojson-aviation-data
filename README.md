@@ -12,7 +12,21 @@ Building and running the project
 - build the project  - './gradlew build'
 - build docker image - ./gradlew bootBuildImage
 - start containers   - './docker-compose up'
-- go to - 'http://localhost:9091/notam' - it should display list of NOTAMS encoded in JSON
+- go to - 'http://localhost:9091/notam' - it should display list of NOTAMs encoded in JSON
+
+Testing
+-
+
+curl -X GET http://localhost:9091/event
+
+curl -X DELETE http://localhost:8080/event/6032c4996c895740f2abb7c1
+
+To test creation and modification of NOTAMs copy (and modify) one of displayed NOTAM document into a new file called new_notam.json in the current folder you are curling from. Try following:
+
+curl -d @new_notam.json -H "Content-Type: application/json" http://localhost:9091/event
+
+curl -d @new_notam.json -H 'Content-Type: application/json' -X PUT http://localhost:9091/notam/6032c4996c895740f2abb7c2
+
 
 Structure
 -
