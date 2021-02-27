@@ -1,10 +1,11 @@
 Docker + Spring Boot + MongoDB + NOTAMS
 -
 
-Test application uses SpringBoot/MOngoDB and test data from aeronautical domain (NOTAM) to create an repository for aeronautical data. It does following things:
+Test application uses SpringBoot/MOngoDB and some data from aeronautical domain (NOTAM) to create an aeronautical data repository. It does following things:
 - creates a docker container for aeronautical database
 - creates a docker container for a SpringBoot REST application which connects to the database and exposes an API
-- loads NOTAM messages downloaded form ICAO web page in the database and exposes minimalistic CRUD API as HATEOAS.
+- loads NOTAM messages downloaded via ICAO API (web page) in the MongoDB database
+- Finally, it exposes a minimalistic CRUD API in HATEOAS fashion.
 
 Building and running the project
 -
