@@ -1,0 +1,24 @@
+version: '3.7'
+services:
+  database:
+    container_name: aero_dbase
+    image: 'bitnami/mongodb:4.2-debian-10'
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGODB_DATABASE=aero_datasets
+      - MONGODB_USERNAME=airman
+      - MONGODB_PASSWORD=goldeneagle
+  server1:
+    container_name: aero-datasets_server
+    image: aero_datasets:0.0.1-SNAPSHOT
+    ports:
+      - 9091:8080
+    environment:
+      - THISAPP_DB_CREATE=true
+      - SPRING_DATA_MONGODB_HOST=aero_dbase
+      - SPRING_DATA_MONGODB_DATABASE=aero_datasets
+      - SPRING_DATA_MONGODB_USERNAME=airman
+      - SPRING_DATA_MONGODB_PASSWORD=goldeneagle
+    depends_on:
+      - database
