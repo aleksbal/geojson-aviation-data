@@ -1,5 +1,85 @@
 [
   {
+    "_id": "6035da6aab233e8499a8814b",
+    "id": "M3088/19",
+    "entity": "MX",
+    "status": "LT",
+    "Qcode": "MXLT",
+    "Area": "AGA",
+    "SubArea": "Movement and landing area",
+    "Condition": "Limitations",
+    "Subject": "Taxiway(s)",
+    "Modifier": "Limited to",
+    "message": "NO HOLDING POINT MARK BEFORE RUNWAY : DOWNGRADED AND NON \nREGULATORY MARKING ON MOVEMENT AREA.\nCREATED: 08 Oct 2019 12:44:00 \nSOURCE: EUECYIYN",
+    "startdate": "2019-10-08T12:43:00.000Z",
+    "enddate": "2100-02-01T00:00:00.000Z",
+    "all": "M3088/19 NOTAMR M2987/19\nQ) LFRR/QMXLT/IV/M  /A /000/999/4757N00211W005\nA) LFXQ B) 1910081243 C) PERM\nE) NO HOLDING POINT MARK BEFORE RUNWAY : DOWNGRADED AND NON \nREGULATORY MARKING ON MOVEMENT AREA.\nCREATED: 08 Oct 2019 12:44:00 \nSOURCE: EUECYIYN",
+    "location": "LFXQ",
+    "isICAO": true,
+    "Created": "2019-10-08T12:44:00.000Z",
+    "key": "M3088/19-LFXQ",
+    "type": "airport",
+    "quality": {
+      "fmt_01": 1,
+      "len_01": 1,
+      "dur_01": 0,
+      "dur_03": 0,
+      "qcd_02": 1,
+      "qcd_03": 1,
+      "prp_01": 1,
+      "prp_02": 1,
+      "prp_03": 1,
+      "jar_01": 1,
+      "jars": [],
+      "score": 80
+    },
+    "StateCode": "FRA",
+    "StateName": "France",
+    "geometry": { "type": "Point", "coordinates": [-2.181943, 47.943889] }
+  },
+  {
+    "_id": "6035da70ab233e8499a8c984",
+    "id": "P2336/20",
+    "entity": "OB",
+    "status": "CE",
+    "Qcode": "OBCE",
+    "Area": "Other Information",
+    "SubArea": "Other Information",
+    "Condition": "Changes",
+    "Subject": "Obstacle",
+    "Modifier": "Erected",
+    "message": "TOWER CRANE OVER AD, RDL 101/1.47NM ARP :\nPSN : 485754N 0022841E\nHEIGHT : 146FT\nELEV : 359FT\nLIGHTING : DAY AND NIGHT\nCREATED: 14 Aug 2020 13:49:00 \nSOURCE: EUECYIYN",
+    "startdate": "2020-08-17T05:00:00.000Z",
+    "enddate": "2021-03-29T17:00:00.000Z",
+    "all": "P2336/20 NOTAMN\nQ) LFFF/QOBCE/IV/M  /A /000/999/4858N00226E005\nA) LFPB B) 2008170500 C) 2103291700\nE) TOWER CRANE OVER AD, RDL 101/1.47NM ARP :\nPSN : 485754N 0022841E\nHEIGHT : 146FT\nELEV : 359FT\nLIGHTING : DAY AND NIGHT\nCREATED: 14 Aug 2020 13:49:00 \nSOURCE: EUECYIYN",
+    "location": "LFPB",
+    "isICAO": true,
+    "Created": "2020-08-14T13:49:00.000Z",
+    "key": "P2336/20-LFPB",
+    "type": "airport",
+    "quality": {
+      "fmt_01": 1,
+      "len_01": 1,
+      "dur_01": 1,
+      "dur_03": 0,
+      "qcd_02": 1,
+      "qcd_03": 1,
+      "prp_01": 1,
+      "prp_02": 1,
+      "prp_03": 1,
+      "jar_01": 0,
+      "jars": [
+        "PSN",
+        "RDL",
+        "ARP"
+      ],
+      "score": 80
+    },
+    "StateCode": "FRA",
+    "StateName": "France",
+    "geometry": { "type": "Point", "coordinates": [6.365000, 47.787167] }
+  },
+  {
     "_id": "6035da69ab233e8499a87f6e",
     "id": "M0551/21",
     "entity": "PF",
@@ -34,7 +114,8 @@
       "score": 90
     },
     "StateCode": "FRA",
-    "StateName": "France"
+    "StateName": "France",
+    "geometry": { "type": "Point", "coordinates": [9.4060, 41.9244] }
   },
   {
     "_id": "6035da69ab233e8499a87f6f",
@@ -71,7 +152,8 @@
       "score": 90
     },
     "StateCode": "FRA",
-    "StateName": "France"
+    "StateName": "France",
+    "geometry": { "type": "Point", "coordinates": [9.4060, 41.9244] }
   },
   {
     "_id": "6035da69ab233e8499a87f70",
@@ -108,7 +190,8 @@
       "score": 100
     },
     "StateCode": "FRA",
-    "StateName": "France"
+    "StateName": "France",
+    "geometry": { "type": "Point", "coordinates": [9.4060, 41.9244] }
   },
   {
     "_id": "6035da69ab233e8499a87f71",
@@ -145,7 +228,8 @@
       "score": 90
     },
     "StateCode": "FRA",
-    "StateName": "France"
+    "StateName": "France",
+    "geometry": { "type": "Point", "coordinates": [9.4060, 41.9244] }
   },
   {
     "_id": "6035da69ab233e8499a87f72",
@@ -333,46 +417,6 @@
         "AVBL"
       ],
       "score": 80
-    },
-    "StateCode": "FRA",
-    "StateName": "France"
-  },
-  {
-    "_id": "6035da69ab233e8499a87f77",
-    "id": "P3162/20",
-    "entity": "OB",
-    "status": "CE",
-    "Qcode": "OBCE",
-    "Area": "Other Information",
-    "SubArea": "Other Information",
-    "Condition": "Changes",
-    "Subject": "Obstacle",
-    "Modifier": "Erected",
-    "message": "PRESENCE OF ZIP LINE RDL268/5NM LFKL ARP : \nPSN : 454230N 0043456E \nELEV : 2543FT \nHEIGHT : 217FT \nLIGHTING : NIL\nCREATED: 23 Oct 2020 14:17:00 \nSOURCE: EUECYIYN",
-    "startdate": "2020-11-04T07:00:00.000Z",
-    "enddate": "2100-02-01T00:00:00.000Z",
-    "all": "P3162/20 NOTAMN\nQ) LFMM/QOBCE/IV/M  /AE/000/026/4543N00435E001\nA) LFKL B) 2011040700 C) PERM\nE) PRESENCE OF ZIP LINE RDL268/5NM LFKL ARP : \nPSN : 454230N 0043456E \nELEV : 2543FT \nHEIGHT : 217FT \nLIGHTING : NIL\nCREATED: 23 Oct 2020 14:17:00 \nSOURCE: EUECYIYN",
-    "location": "LFKL",
-    "isICAO": true,
-    "Created": "2020-10-23T14:17:00.000Z",
-    "key": "P3162/20-LFKL",
-    "type": "airport",
-    "quality": {
-      "fmt_01": 1,
-      "len_01": 1,
-      "dur_01": 0,
-      "dur_03": 0,
-      "qcd_02": 1,
-      "qcd_03": 1,
-      "prp_01": 1,
-      "prp_02": 1,
-      "prp_03": 1,
-      "jar_01": 0,
-      "jars": [
-        "PSN",
-        "ARP"
-      ],
-      "score": 70
     },
     "StateCode": "FRA",
     "StateName": "France"
@@ -18507,43 +18551,6 @@
       "jars": [
         "PSN"
       ],
-      "score": 80
-    },
-    "StateCode": "FRA",
-    "StateName": "France"
-  },
-  {
-    "_id": "6035da6aab233e8499a8814b",
-    "id": "M3088/19",
-    "entity": "MX",
-    "status": "LT",
-    "Qcode": "MXLT",
-    "Area": "AGA",
-    "SubArea": "Movement and landing area",
-    "Condition": "Limitations",
-    "Subject": "Taxiway(s)",
-    "Modifier": "Limited to",
-    "message": "NO HOLDING POINT MARK BEFORE RUNWAY : DOWNGRADED AND NON \nREGULATORY MARKING ON MOVEMENT AREA.\nCREATED: 08 Oct 2019 12:44:00 \nSOURCE: EUECYIYN",
-    "startdate": "2019-10-08T12:43:00.000Z",
-    "enddate": "2100-02-01T00:00:00.000Z",
-    "all": "M3088/19 NOTAMR M2987/19\nQ) LFRR/QMXLT/IV/M  /A /000/999/4757N00211W005\nA) LFXQ B) 1910081243 C) PERM\nE) NO HOLDING POINT MARK BEFORE RUNWAY : DOWNGRADED AND NON \nREGULATORY MARKING ON MOVEMENT AREA.\nCREATED: 08 Oct 2019 12:44:00 \nSOURCE: EUECYIYN",
-    "location": "LFXQ",
-    "isICAO": true,
-    "Created": "2019-10-08T12:44:00.000Z",
-    "key": "M3088/19-LFXQ",
-    "type": "airport",
-    "quality": {
-      "fmt_01": 1,
-      "len_01": 1,
-      "dur_01": 0,
-      "dur_03": 0,
-      "qcd_02": 1,
-      "qcd_03": 1,
-      "prp_01": 1,
-      "prp_02": 1,
-      "prp_03": 1,
-      "jar_01": 1,
-      "jars": [],
       "score": 80
     },
     "StateCode": "FRA",
@@ -41739,47 +41746,6 @@
         "LGT",
         "OPR",
         "RDL"
-      ],
-      "score": 80
-    },
-    "StateCode": "FRA",
-    "StateName": "France"
-  },
-  {
-    "_id": "6035da70ab233e8499a8c984",
-    "id": "P2336/20",
-    "entity": "OB",
-    "status": "CE",
-    "Qcode": "OBCE",
-    "Area": "Other Information",
-    "SubArea": "Other Information",
-    "Condition": "Changes",
-    "Subject": "Obstacle",
-    "Modifier": "Erected",
-    "message": "TOWER CRANE OVER AD, RDL 101/1.47NM ARP :\nPSN : 485754N 0022841E\nHEIGHT : 146FT\nELEV : 359FT\nLIGHTING : DAY AND NIGHT\nCREATED: 14 Aug 2020 13:49:00 \nSOURCE: EUECYIYN",
-    "startdate": "2020-08-17T05:00:00.000Z",
-    "enddate": "2021-03-29T17:00:00.000Z",
-    "all": "P2336/20 NOTAMN\nQ) LFFF/QOBCE/IV/M  /A /000/999/4858N00226E005\nA) LFPB B) 2008170500 C) 2103291700\nE) TOWER CRANE OVER AD, RDL 101/1.47NM ARP :\nPSN : 485754N 0022841E\nHEIGHT : 146FT\nELEV : 359FT\nLIGHTING : DAY AND NIGHT\nCREATED: 14 Aug 2020 13:49:00 \nSOURCE: EUECYIYN",
-    "location": "LFPB",
-    "isICAO": true,
-    "Created": "2020-08-14T13:49:00.000Z",
-    "key": "P2336/20-LFPB",
-    "type": "airport",
-    "quality": {
-      "fmt_01": 1,
-      "len_01": 1,
-      "dur_01": 1,
-      "dur_03": 0,
-      "qcd_02": 1,
-      "qcd_03": 1,
-      "prp_01": 1,
-      "prp_02": 1,
-      "prp_03": 1,
-      "jar_01": 0,
-      "jars": [
-        "PSN",
-        "RDL",
-        "ARP"
       ],
       "score": 80
     },

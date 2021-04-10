@@ -1,7 +1,7 @@
 package org.abl.aero.datasets.notam;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+ import com.mongodb.client.model.Indexes;
 import org.codehaus.jackson.type.TypeReference;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.JsonNode;
@@ -77,6 +77,9 @@ public class NotamService {
 				 				 for (JsonNode eventItem : parser) {
                     collection.insertOne(Document.parse(eventItem.toString().replace(".000Z","")));
 				 		     }
+								 // just for test purposes, it should be done by an annotation
+								 collection.createIndex(Indexes.geo2dsphere("geometry"));
+								 
              } catch (Exception e) {
                  if (scanner != null) {
                      scanner.close();

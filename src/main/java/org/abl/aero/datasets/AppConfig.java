@@ -31,7 +31,7 @@ import org.springframework.boot.jackson.JsonComponentModule;
 @Import(SpringDataRestConfiguration.class)
 //@Profile("production") // https://www.baeldung.com/spring-profiles
 public class AppConfig {
-  
+
 		@Bean
 		public Docket productApi() {
 			 log.info("Configuring docket for Swagger...");

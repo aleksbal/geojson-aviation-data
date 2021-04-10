@@ -8,6 +8,8 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.index.TextIndexed;
 
+import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
+
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -25,6 +27,9 @@ import java.util.Date;
 import org.springframework.boot.jackson.JsonComponent;
 
 import lombok.extern.slf4j.Slf4j;
+
+import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
+import org.springframework.data.mongodb.core.index.GeoSpatialIndexType;
 
 @Document(collection = "notams")
 @AllArgsConstructor
@@ -44,6 +49,7 @@ public class NotamItem {
 	  private String condition;
 	  private String subject;
 	  private String modifier;
+    private String location;
 
     @TextIndexed
 	  private String message;
@@ -61,10 +67,13 @@ public class NotamItem {
 
 	  private Boolean isICAO;
 
-	  private String location;
 	  private String Created;
 	  private String key;
 	  private String type;
 	  private String stateCode;
 	  private String stateName;
+
+    @GeoSpatialIndexed(name = "geometry", type = GeoSpatialIndexType.GEO_2DSPHERE)
+	  private GeoJsonPoint geometry;
+
  }

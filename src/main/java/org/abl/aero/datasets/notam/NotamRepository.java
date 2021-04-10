@@ -12,19 +12,24 @@ import org.springframework.data.mongodb.repository.Query;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
-// Hypermedia as the Engine of Application State (HATEOAS)
-@Api(tags = "Notam Entity")
+//import com.mongodb.client.model.geojson.Point;
+import org.springframework.data.geo.Point;
+import org.springframework.data.geo.Distance;
+/**
+Hypermedia as the Engine of Application State (HATEOAS)
+**/
+@Api(tags = "NOTAM Entity")
 @RepositoryRestResource(collectionResourceRel = "notam", path = "notam")
 public interface NotamRepository extends MongoRepository<NotamItem, String> {
 
-  @ApiOperation("Find all Notams by location.")
-  List<NotamItem> findByLocation(@Param("location") String location);
-
-  @ApiOperation("Find all Notams by area.")
+  @ApiOperation("Find all NOTAMs by area.")
   List<NotamItem> findByArea(@Param("area") String area);
 
   @ApiOperation("Notam text search.")
   @Query("{'message':{'$regex':'?0','$options':'i'}}")
   Page<NotamItem> searchByMessage(String pattern, Pageable page);
+
+  @ApiOperation("Find all NOTAMs by location.")
+  List<NotamItem> findByGeometryNear(Point point, Distance distance);
 
 }

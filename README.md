@@ -1,5 +1,10 @@
 # Getting Started
 
+This simple application is created to demonstrate a microservice architecture based on MongoDB/SpringBoot solution stack. The RESTful services provide via their endpoints different types of aviation data (NOTAMs, airports, NAVAIDs etc.) encoded in GeoJSON.
+
+Currently only several NOTAMs have geometries. They can be queried for testing using the URL like this one:
+http://localhost:9091/notamsarea?lon=-2.181943&lat=47.943889&d=1
+
 ### Reference Documentation
 For further reference, please consider the following sections:
 
@@ -20,4 +25,3 @@ The following guides illustrate how to use some features concretely:
 These additional references should also help you:
 
 * [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
-
