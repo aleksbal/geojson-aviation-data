@@ -4,9 +4,9 @@ This simple application is created to demonstrate a microservice architecture ba
 
 Currently only several test NOTAMs have geometries. 
 
-The Swagger API description is available at http://localhost:9091/swagger-ui/
+Once the application is up and running locally the Swagger API description will be available at http://localhost:9091/swagger-ui/
 
-NOTAM geospatial example can be queried for testing using this URL:
+and NOTAM geospatial example can be queried for testing using this URL:
 http://localhost:9091/notamsarea?lon=-2.181943&lat=47.943889&d=1
 
 ### Reference Documentation
