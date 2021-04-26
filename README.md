@@ -1,8 +1,8 @@
 # Getting Started
 
-This simple application is created to demonstrate a microservice architecture based on MongoDB/SpringBoot solution stack. The RESTful services provide via their endpoints different types of aviation data (NOTAMs, airports, NAVAIDs etc.) encoded in GeoJSON.
+This simple application is created to demonstrate a microservice architecture for an aeronautical information system (GIS data) based on MongoDB/SpringBoot solution stack. The RESTful services provide access to several types of (test) aviation data (NOTAMs, airports, NAVAIDs etc.) encoded in GeoJSON.
 
-Currently only several test NOTAMs have geometries. 
+Currently only several test NOTAMs have correct JSON geometries. 
 
 Once the application is up and running locally the Swagger API description will be available at http://localhost:9091/swagger-ui/
 
