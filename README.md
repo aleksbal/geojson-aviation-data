@@ -1,6 +1,6 @@
 # Getting Started
 
-This simple application is created to demonstrate a microservice architecture for an aeronautical information system (GIS data) based on MongoDB/SpringBoot solution stack. The RESTful services provide access to several types of (test) aviation data (NOTAMs, airports, NAVAIDs etc.) encoded in GeoJSON.
+This simple application is created to demonstrate a microservice architecture for an aeronautical information system (GeoJson, AIXM, NOTAM) based on MongoDB/SpringBoot solution stack. The RESTful services provide access to several types of (test) aviation data (NOTAMs, airports, NAVAIDs etc.) encoded in GeoJSON.
 
 Currently only several test NOTAMs have correct JSON geometries. 
 
