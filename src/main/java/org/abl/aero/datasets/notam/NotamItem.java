@@ -20,10 +20,10 @@ import org.springframework.data.mongodb.core.index.GeoSpatialIndexType;
 @NoArgsConstructor
 @Data
 public class NotamItem {
-
-    @Id
-    private String idb;
-    private String id;
+	
+	@Id
+	private String idb;
+	private String id;
 	private String entity;
 	private String status;
 	private String Qcode;
@@ -32,20 +32,20 @@ public class NotamItem {
 	private String condition;
 	private String subject;
 	private String modifier;
-    private String location;
-
-    @TextIndexed
+	private String location;
+	
+	@TextIndexed
 	private String message;
-
-    @TextIndexed
+	
+	@TextIndexed
 	private String all;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSX")
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
-    private LocalDateTime startdate;
+	//@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSX")
+	@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+	private LocalDateTime startdate;
 
-    //@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSX")
-    @JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
+	//@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss.SSSX")
+	@JsonFormat(pattern = "yyyy-MM-dd'T'HH:mm:ss")
 	private LocalDateTime enddate;
 	private Boolean isICAO;
 	private String Created;
@@ -54,7 +54,7 @@ public class NotamItem {
 	private String stateCode;
 	private String stateName;
 
-    @GeoSpatialIndexed(name = "geometry", type = GeoSpatialIndexType.GEO_2DSPHERE)
+	@GeoSpatialIndexed(name = "geometry", type = GeoSpatialIndexType.GEO_2DSPHERE)
 	private GeoJsonPoint geometry;
 
  }
