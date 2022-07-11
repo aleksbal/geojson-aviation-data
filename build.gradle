@@ -35,7 +35,7 @@ dependencies {
 	implementation 'org.junit.jupiter:junit-jupiter-api'
 	
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-	testRuntimeOnly 'springdoc-openapi-ui:1.5.2'
+	testRuntimeOnly 'springdoc-openapi-ui:1.6.9'
 }
 
 test {
