@@ -33,9 +33,9 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-json'
 	implementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
 	implementation 'org.junit.jupiter:junit-jupiter-api'
+	implementation 'org.springdoc:springdoc-openapi-ui:1.6.9'
 	
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
-	testRuntimeOnly 'springdoc-openapi-ui:1.6.9'
 }
 
 test {
