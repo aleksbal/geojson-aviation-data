@@ -1,12 +1,12 @@
 plugins {
-	id 'org.springframework.boot' version '2.4.3'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'org.springframework.boot' version '2.7.0'
+	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
 	id 'java'
 }
 
-group = 'org.abl.aviation.geojsondata '
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
+group = 'org.abl.aviation.geojsondata'
+version = '0.0.2-SNAPSHOT'
+sourceCompatibility = '17'
 
 configurations {
 	compileOnly {
@@ -21,17 +21,19 @@ repositories {
 dependencies {
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
 	implementation 'org.codehaus.jackson:jackson-mapper-asl:1.9.13'
 	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 	implementation 'org.springframework.boot:spring-boot-starter-data-rest'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-web'
-	testImplementation 'org.springframework.boot:spring-boot-starter-json'
-	testImplementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
-	testImplementation 'org.junit.jupiter:junit-jupiter-api'
+	implementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.springframework.boot:spring-boot-starter-json'
+	implementation 'de.flapdoodle.embed:de.flapdoodle.embed.mongo'
+	implementation 'org.junit.jupiter:junit-jupiter-api'
+	
 	testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
 	testRuntimeOnly 'springdoc-openapi-ui:1.5.2'
 }
