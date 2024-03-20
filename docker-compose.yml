@@ -1,8 +1,8 @@
-version: '3.7'
+version: '3.8'
 services:
   database:
     container_name: aero_dbase
-    image: 'bitnami/mongodb:4.2-debian-10'
+    image: 'mongo:7-jammy'
     ports:
       - "27017:27017"
     environment:

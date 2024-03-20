@@ -1,13 +1,10 @@
 package org.abl.aero.datasets.notam;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.mongodb.client.model.Indexes;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.JsonNode;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.io.Reader;
-import java.util.Scanner;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -52,13 +49,13 @@ public class NotamService {
 
     @Override
     public Void doInCollection(MongoCollection<Document> collection) throws MongoException, DataAccessException {
-         Scanner scanner = null;
          try {
-                Reader reader = Files.newBufferedReader(Paths.get(getClass().getClassLoader()
+                var reader = Files.newBufferedReader(Paths.get(getClass().getClassLoader()
                   .getResource(eventFile).toURI()));
-                ObjectMapper objectMapper = new ObjectMapper();
-                JsonNode parser = objectMapper.readTree(reader);
-                for (JsonNode eventItem : parser) {
+                var objectMapper = new ObjectMapper();
+                var parser = objectMapper.readTree(reader);
+
+                for (var eventItem : parser) {
                         collection.insertOne(Document.parse(
                                 //remove due to date serialization problem
                                 eventItem.toString().replace(".000Z","")
@@ -69,10 +66,7 @@ public class NotamService {
                 collection.createIndex(Indexes.geo2dsphere("geometry"));
 
          } catch (Exception e) {
-                if (scanner != null) {
-                    scanner.close();
-                }
-                throw new RuntimeException("Could not load event dataset!", e);
+           throw new RuntimeException("Could not load event dataset!", e);
          }
          return null;
        }
