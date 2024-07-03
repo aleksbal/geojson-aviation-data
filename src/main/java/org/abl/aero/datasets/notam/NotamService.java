@@ -1,6 +1,7 @@
 package org.abl.aero.datasets.notam;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.util.Objects;
 import org.springframework.beans.factory.annotation.Autowired;
 import com.mongodb.client.model.Indexes;
 import java.nio.file.Files;
@@ -50,8 +51,9 @@ public class NotamService {
     @Override
     public Void doInCollection(MongoCollection<Document> collection) throws MongoException, DataAccessException {
          try {
-                var reader = Files.newBufferedReader(Paths.get(getClass().getClassLoader()
-                  .getResource(eventFile).toURI()));
+                var reader = Files.newBufferedReader(Paths.get(
+                    Objects.requireNonNull(getClass().getClassLoader()
+                        .getResource(eventFile)).toURI()));
                 var objectMapper = new ObjectMapper();
                 var parser = objectMapper.readTree(reader);
 

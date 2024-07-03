@@ -24,9 +24,9 @@ public class NotamResource {
   public final List<NotamItem> getByLocations(
     @RequestParam("lat") String latitude,
     @RequestParam("lon") String longitude,
-    @RequestParam("d") double distance) {
+    @RequestParam("radius") double distance) {
 
-    return this.repository.findByGeometryNear(new Point(Double.valueOf(longitude), Double.valueOf(latitude)),
+    return this.repository.findByGeometryNear(new Point(Double.parseDouble(longitude), Double.parseDouble(latitude)),
       new Distance(distance, Metrics.KILOMETERS));
   }
 }
