@@ -1,4 +1,4 @@
-package org.abl.aero.datasets.notam;
+package org.abl.aero.datasets.notams;
 
 import org.junit.jupiter.api.Test;
 

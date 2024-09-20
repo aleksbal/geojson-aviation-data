@@ -1,4 +1,4 @@
-package org.abl.aero.datasets.notam;
+package org.abl.aero.datasets.notams;
 
 import java.util.List;
 import org.springframework.data.geo.Polygon;

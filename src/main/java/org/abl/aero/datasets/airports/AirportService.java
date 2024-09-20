@@ -1,32 +1,32 @@
-package org.abl.aero.datasets.notams;
+package org.abl.aero.datasets.airports;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.util.Objects;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.mongodb.MongoException;
+import com.mongodb.client.MongoCollection;
 import com.mongodb.client.model.Indexes;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import org.springframework.stereotype.Service;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.data.mongodb.core.MongoTemplate;
-import org.bson.Document;
-import java.lang.RuntimeException;
-import com.mongodb.MongoException;
-import org.springframework.dao.DataAccessException;
+import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
+import org.abl.aero.datasets.airports.model.AirportHeliport;
+import org.bson.Document;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.dao.DataAccessException;
 import org.springframework.data.mongodb.core.CollectionCallback;
-import com.mongodb.client.MongoCollection;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.stereotype.Service;
 
 /**
  * On startup this service imports a JSON document from the classpath
  */
 @Slf4j
 @Service
-public class NotamService {
+public class AirportService {
 
     @Autowired
-    private NotamRepository eventRepository;
+    private AirportRepository repository;
 
     @Autowired
     private MongoTemplate mongoTemplate;
@@ -45,8 +45,8 @@ public class NotamService {
     }
 
     log.info("Starting data import using low level db functions...");
-    mongoTemplate.dropCollection(NotamItem.class);
-    mongoTemplate.execute(NotamItem.class, new CollectionCallback<Void>() {
+    mongoTemplate.dropCollection(AirportHeliport.class);
+    mongoTemplate.execute(AirportHeliport.class, new CollectionCallback<Void>() {
 
     @Override
     public Void doInCollection(MongoCollection<Document> collection) throws MongoException, DataAccessException {
@@ -74,6 +74,6 @@ public class NotamService {
        }
     });
 
-    log.info("Loaded objects: " + mongoTemplate.count(new Query(), NotamItem.class));
+    log.info("Loaded objects: " + mongoTemplate.count(new Query(), AirportHeliport.class));
     }
 }

@@ -1,59 +1,25 @@
-package org.abl.aero.datasets.airports;
+package org.abl.aero.datasets.airports.model;
 
 import org.springframework.data.mongodb.core.geo.GeoJsonPolygon;
 
-
 public class ElevatedSurface {
 
-  private GeoJsonPolygon geometry; // GeoJSON Polygon representing the runway footprint
-
-  private String surfaceCondition; // e.g., "Dry", "Wet", "Snowy"
-
-  private String maintenanceStatus; // e.g., "Good", "Needs Repair"
-
-  private String illuminationStatus; // e.g., "Operational", "Out of Service"
+  private GeoJsonPolygon geometry;
+  private Double horizontalAccuracy;
+  private Double elevation;
+  private Double verticalAccuracy;
 
   // Constructors
   public ElevatedSurface() {}
 
-  public ElevatedSurface(GeoJsonPolygon geometry, String surfaceCondition,
-      String maintenanceStatus, String illuminationStatus) {
+  public ElevatedSurface(GeoJsonPolygon geometry, Double horizontalAccuracy,
+      Double elevation, Double verticalAccuracy) {
     this.geometry = geometry;
-    this.surfaceCondition = surfaceCondition;
-    this.maintenanceStatus = maintenanceStatus;
-    this.illuminationStatus = illuminationStatus;
+    this.horizontalAccuracy = horizontalAccuracy;
+    this.elevation = elevation;
+    this.verticalAccuracy = verticalAccuracy;
   }
 
   // Getters and Setters
-  public GeoJsonPolygon getGeometry() {
-    return geometry;
-  }
-
-  public void setGeometry(GeoJsonPolygon geometry) {
-    this.geometry = geometry;
-  }
-
-  public String getSurfaceCondition() {
-    return surfaceCondition;
-  }
-
-  public void setSurfaceCondition(String surfaceCondition) {
-    this.surfaceCondition = surfaceCondition;
-  }
-
-  public String getMaintenanceStatus() {
-    return maintenanceStatus;
-  }
-
-  public void setMaintenanceStatus(String maintenanceStatus) {
-    this.maintenanceStatus = maintenanceStatus;
-  }
-
-  public String getIlluminationStatus() {
-    return illuminationStatus;
-  }
-
-  public void setIlluminationStatus(String illuminationStatus) {
-    this.illuminationStatus = illuminationStatus;
-  }
+  // ...
 }

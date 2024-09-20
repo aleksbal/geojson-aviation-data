@@ -2,7 +2,7 @@ package org.abl.aero.datasets;
 
 import jakarta.annotation.PostConstruct;
 import lombok.extern.slf4j.Slf4j;
-import org.abl.aero.datasets.notam.NotamService;
+import org.abl.aero.datasets.notams.NotamService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

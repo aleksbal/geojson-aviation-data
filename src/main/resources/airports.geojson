@@ -1,0 +1,516 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.461941, 51.470020]
+      },
+      "properties": {
+        "designator": "EGLL",
+        "name": "Heathrow Airport",
+        "type": "AIRPORT",
+        "cityServed": "London",
+        "locationIndicatorICAO": "EGLL",
+        "controlType": "CONTROLLED",
+        "fieldElevation": 83.0,
+        "fieldElevationUnit": "FT",
+        "magneticVariation": "0°W",
+        "dateMagneticVariation": "2020-01-01",
+        "referenceTemperature": "20°C",
+        "altimeterCheckLocation": "Available",
+        "secondaryPowerSupply": "Yes",
+        "windDirectionIndicator": "Available",
+        "landingDirectionIndicator": "Available",
+        "transitionAltitude": "6000FT",
+        "transitionLevel": "FL070",
+        "permittedOperations": "IFR/VFR",
+        "rescueAndFireFighting": "CAT10",
+        "status": "Operational",
+        "runways": [
+          {
+            "designator": "09L/27R",
+            "length": 3902.0,
+            "width": 50.0,
+            "surfaceComposition": "ASPHALT",
+            "status": "Operational",
+            "direction": "090/270",
+            "runwayElements": [
+              {
+                "type": "THRESHOLD",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [-0.491694, 51.477500],
+                        [-0.491694, 51.479000],
+                        [-0.489194, 51.479000],
+                        [-0.489194, 51.477500],
+                        [-0.491694, 51.477500]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 0.5,
+                  "elevation": 83.0,
+                  "verticalAccuracy": 0.1
+                }
+              }
+            ]
+          },
+          {
+            "designator": "09R/27L",
+            "length": 3658.0,
+            "width": 50.0,
+            "surfaceComposition": "ASPHALT",
+            "status": "Operational",
+            "direction": "090/270",
+            "runwayElements": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.555994, 49.012779]
+      },
+      "properties": {
+        "designator": "LFPG",
+        "name": "Charles de Gaulle Airport",
+        "type": "AIRPORT",
+        "cityServed": "Paris",
+        "locationIndicatorICAO": "LFPG",
+        "controlType": "CONTROLLED",
+        "fieldElevation": 392.0,
+        "fieldElevationUnit": "FT",
+        "magneticVariation": "1°W",
+        "dateMagneticVariation": "2020-01-01",
+        "referenceTemperature": "21°C",
+        "altimeterCheckLocation": "Available",
+        "secondaryPowerSupply": "Yes",
+        "windDirectionIndicator": "Available",
+        "landingDirectionIndicator": "Available",
+        "transitionAltitude": "5000FT",
+        "transitionLevel": "FL060",
+        "permittedOperations": "IFR/VFR",
+        "rescueAndFireFighting": "CAT9",
+        "status": "Operational",
+        "runways": [
+          {
+            "designator": "08L/26R",
+            "length": 4215.0,
+            "width": 45.0,
+            "surfaceComposition": "CONCRETE",
+            "status": "Operational",
+            "direction": "080/260",
+            "runwayElements": []
+          },
+          {
+            "designator": "09R/27L",
+            "length": 2700.0,
+            "width": 60.0,
+            "surfaceComposition": "CONCRETE",
+            "status": "Operational",
+            "direction": "090/270",
+            "runwayElements": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-73.778139, 40.641766]
+      },
+      "properties": {
+        "designator": "KJFK",
+        "name": "John F. Kennedy International Airport",
+        "type": "AIRPORT",
+        "cityServed": "New York",
+        "locationIndicatorICAO": "KJFK",
+        "controlType": "CONTROLLED",
+        "fieldElevation": 13.0,
+        "fieldElevationUnit": "FT",
+        "magneticVariation": "13°W",
+        "dateMagneticVariation": "2020-01-01",
+        "referenceTemperature": "25°C",
+        "altimeterCheckLocation": "Available",
+        "secondaryPowerSupply": "Yes",
+        "windDirectionIndicator": "Available",
+        "landingDirectionIndicator": "Available",
+        "transitionAltitude": "18000FT",
+        "transitionLevel": "FL180",
+        "permittedOperations": "IFR/VFR",
+        "rescueAndFireFighting": "CAT9",
+        "status": "Operational",
+        "runways": [
+          {
+            "designator": "04L/22R",
+            "length": 3460.0,
+            "width": 61.0,
+            "surfaceComposition": "ASPHALT",
+            "status": "Operational",
+            "direction": "040/220",
+            "runwayElements": []
+          },
+          {
+            "designator": "13L/31R",
+            "length": 3048.0,
+            "width": 46.0,
+            "surfaceComposition": "CONCRETE",
+            "status": "Operational",
+            "direction": "130/310",
+            "runwayElements": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [151.177222, -33.946111]
+      },
+      "properties": {
+        "designator": "YSSY",
+        "name": "Sydney Kingsford Smith Airport",
+        "type": "AIRPORT",
+        "cityServed": "Sydney",
+        "locationIndicatorICAO": "YSSY",
+        "controlType": "CONTROLLED",
+        "fieldElevation": 21.0,
+        "fieldElevationUnit": "FT",
+        "magneticVariation": "12°E",
+        "dateMagneticVariation": "2020-01-01",
+        "referenceTemperature": "24°C",
+        "altimeterCheckLocation": "Available",
+        "secondaryPowerSupply": "Yes",
+        "windDirectionIndicator": "Available",
+        "landingDirectionIndicator": "Available",
+        "transitionAltitude": "10000FT",
+        "transitionLevel": "FL110",
+        "permittedOperations": "IFR/VFR",
+        "rescueAndFireFighting": "CAT9",
+        "status": "Operational",
+        "runways": [
+          {
+            "designator": "16R/34L",
+            "length": 3962.0,
+            "width": 45.0,
+            "surfaceComposition": "ASPHALT",
+            "status": "Operational",
+            "direction": "160/340",
+            "runwayElements": []
+          },
+          {
+            "designator": "07/25",
+            "length": 2529.0,
+            "width": 45.0,
+            "surfaceComposition": "ASPHALT",
+            "status": "Operational",
+            "direction": "070/250",
+            "runwayElements": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [139.781111, 35.552778]
+      },
+      "properties": {
+        "designator": "RJTT",
+        "name": "Tokyo Haneda Airport",
+        "type": "AIRPORT",
+        "cityServed": "Tokyo",
+        "locationIndicatorICAO": "RJTT",
+        "controlType": "CONTROLLED",
+        "fieldElevation": 21.0,
+        "fieldElevationUnit": "FT",
+        "magneticVariation": "7°W",
+        "dateMagneticVariation": "2020-01-01",
+        "referenceTemperature": "26°C",
+        "altimeterCheckLocation": "Available",
+        "secondaryPowerSupply": "Yes",
+        "windDirectionIndicator": "Available",
+        "landingDirectionIndicator": "Available",
+        "transitionAltitude": "14000FT",
+        "transitionLevel": "FL150",
+        "permittedOperations": "IFR/VFR",
+        "rescueAndFireFighting": "CAT9",
+        "status": "Operational",
+        "runways": [
+          {
+            "designator": "16L/34R",
+            "length": 3000.0,
+            "width": 60.0,
+            "surfaceComposition": "CONCRETE",
+            "status": "Operational",
+            "direction": "160/340",
+            "runwayElements": []
+          },
+          {
+            "designator": "05/23",
+            "length": 2500.0,
+            "width": 60.0,
+            "surfaceComposition": "CONCRETE",
+            "status": "Operational",
+            "direction": "050/230",
+            "runwayElements": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-46.655381, -23.626110]
+      },
+      "properties": {
+        "designator": "SBGR",
+        "name": "São Paulo–Guarulhos International Airport",
+        "type": "AIRPORT",
+        "cityServed": "São Paulo",
+        "locationIndicatorICAO": "SBGR",
+        "controlType": "CONTROLLED",
+        "fieldElevation": 2459.0,
+        "fieldElevationUnit": "FT",
+        "magneticVariation": "21°W",
+        "dateMagneticVariation": "2020-01-01",
+        "referenceTemperature": "23°C",
+        "altimeterCheckLocation": "Available",
+        "secondaryPowerSupply": "Yes",
+        "windDirectionIndicator": "Available",
+        "landingDirectionIndicator": "Available",
+        "transitionAltitude": "6000FT",
+        "transitionLevel": "FL070",
+        "permittedOperations": "IFR/VFR",
+        "rescueAndFireFighting": "CAT9",
+        "status": "Operational",
+        "runways": [
+          {
+            "designator": "09L/27R",
+            "length": 3000.0,
+            "width": 45.0,
+            "surfaceComposition": "ASPHALT",
+            "status": "Operational",
+            "direction": "090/270",
+            "runwayElements": []
+          },
+          {
+            "designator": "09R/27L",
+            "length": 3700.0,
+            "width": 45.0,
+            "surfaceComposition": "ASPHALT",
+            "status": "Operational",
+            "direction": "090/270",
+            "runwayElements": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.287778, 52.559722]
+      },
+      "properties": {
+        "designator": "EDDB",
+        "name": "Berlin Brandenburg Airport",
+        "type": "AIRPORT",
+        "cityServed": "Berlin",
+        "locationIndicatorICAO": "EDDB",
+        "controlType": "CONTROLLED",
+        "fieldElevation": 157.0,
+        "fieldElevationUnit": "FT",
+        "magneticVariation": "2°E",
+        "dateMagneticVariation": "2020-01-01",
+        "referenceTemperature": "22°C",
+        "altimeterCheckLocation": "Available",
+        "secondaryPowerSupply": "Yes",
+        "windDirectionIndicator": "Available",
+        "landingDirectionIndicator": "Available",
+        "transitionAltitude": "5000FT",
+        "transitionLevel": "FL060",
+        "permittedOperations": "IFR/VFR",
+        "rescueAndFireFighting": "CAT8",
+        "status": "Operational",
+        "runways": [
+          {
+            "designator": "07L/25R",
+            "length": 3600.0,
+            "width": 60.0,
+            "surfaceComposition": "CONCRETE",
+            "status": "Operational",
+            "direction": "070/250",
+            "runwayElements": []
+          },
+          {
+            "designator": "07R/25L",
+            "length": 4000.0,
+            "width": 60.0,
+            "surfaceComposition": "CONCRETE",
+            "status": "Operational",
+            "direction": "070/250",
+            "runwayElements": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [144.843333, -37.673333]
+      },
+      "properties": {
+        "designator": "YMML",
+        "name": "Melbourne Airport",
+        "type": "AIRPORT",
+        "cityServed": "Melbourne",
+        "locationIndicatorICAO": "YMML",
+        "controlType": "CONTROLLED",
+        "fieldElevation": 434.0,
+        "fieldElevationUnit": "FT",
+        "magneticVariation": "11°E",
+        "dateMagneticVariation": "2020-01-01",
+        "referenceTemperature": "22°C",
+        "altimeterCheckLocation": "Available",
+        "secondaryPowerSupply": "Yes",
+        "windDirectionIndicator": "Available",
+        "landingDirectionIndicator": "Available",
+        "transitionAltitude": "10000FT",
+        "transitionLevel": "FL110",
+        "permittedOperations": "IFR/VFR",
+        "rescueAndFireFighting": "CAT9",
+        "status": "Operational",
+        "runways": [
+          {
+            "designator": "09/27",
+            "length": 2286.0,
+            "width": 45.0,
+            "surfaceComposition": "ASPHALT",
+            "status": "Operational",
+            "direction": "090/270",
+            "runwayElements": []
+          },
+          {
+            "designator": "16/34",
+            "length": 3657.0,
+            "width": 60.0,
+            "surfaceComposition": "ASPHALT",
+            "status": "Operational",
+            "direction": "160/340",
+            "runwayElements": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [31.405556, 30.121944]
+      },
+      "properties": {
+        "designator": "HECA",
+        "name": "Cairo International Airport",
+        "type": "AIRPORT",
+        "cityServed": "Cairo",
+        "locationIndicatorICAO": "HECA",
+        "controlType": "CONTROLLED",
+        "fieldElevation": 382.0,
+        "fieldElevationUnit": "FT",
+        "magneticVariation": "4°E",
+        "dateMagneticVariation": "2020-01-01",
+        "referenceTemperature": "30°C",
+        "altimeterCheckLocation": "Available",
+        "secondaryPowerSupply": "Yes",
+        "windDirectionIndicator": "Available",
+        "landingDirectionIndicator": "Available",
+        "transitionAltitude": "10000FT",
+        "transitionLevel": "FL110",
+        "permittedOperations": "IFR/VFR",
+        "rescueAndFireFighting": "CAT9",
+        "status": "Operational",
+        "runways": [
+          {
+            "designator": "05L/23R",
+            "length": 4000.0,
+            "width": 60.0,
+            "surfaceComposition": "CONCRETE",
+            "status": "Operational",
+            "direction": "050/230",
+            "runwayElements": []
+          },
+          {
+            "designator": "05C/23C",
+            "length": 4000.0,
+            "width": 60.0,
+            "surfaceComposition": "CONCRETE",
+            "status": "Operational",
+            "direction": "050/230",
+            "runwayElements": []
+          }
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-157.922222, 21.318611]
+      },
+      "properties": {
+        "designator": "PHNL",
+        "name": "Daniel K. Inouye International Airport",
+        "type": "AIRPORT",
+        "cityServed": "Honolulu",
+        "locationIndicatorICAO": "PHNL",
+        "controlType": "CONTROLLED",
+        "fieldElevation": 13.0,
+        "fieldElevationUnit": "FT",
+        "magneticVariation": "10°E",
+        "dateMagneticVariation": "2020-01-01",
+        "referenceTemperature": "27°C",
+        "altimeterCheckLocation": "Available",
+        "secondaryPowerSupply": "Yes",
+        "windDirectionIndicator": "Available",
+        "landingDirectionIndicator": "Available",
+        "transitionAltitude": "18000FT",
+        "transitionLevel": "FL180",
+        "permittedOperations": "IFR/VFR",
+        "rescueAndFireFighting": "CAT8",
+        "status": "Operational",
+        "runways": [
+          {
+            "designator": "08L/26R",
+            "length": 3764.0,
+            "width": 46.0,
+            "surfaceComposition": "ASPHALT",
+            "status": "Operational",
+            "direction": "080/260",
+            "runwayElements": []
+          },
+          {
+            "designator": "04R/22L",
+            "length": 2137.0,
+            "width": 46.0,
+            "surfaceComposition": "ASPHALT",
+            "status": "Operational",
+            "direction": "040/220",
+            "runwayElements": []
+          }
+        ]
+      }
+    }
+  ]
+}
