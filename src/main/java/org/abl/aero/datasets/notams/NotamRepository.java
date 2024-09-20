@@ -20,12 +20,10 @@ public interface NotamRepository extends MongoRepository<NotamItem, String> {
   List<NotamItem> findBySubject(@Param("subject") String subject);
   List<NotamItem> findByLocation(@Param("location") String location);
   List<NotamItem> findByArea(@Param("area") String area);
-
   @Query("{'message':{'$regex':'?0','$options':'i'}}")
   Page<NotamItem> searchByMessage(String pattern, Pageable page);
-
-  @Query("{'message':{'geoWithin':'?0'}}")
+  @Query("{'message':{'$geoWithin':'?0'}}")
   Page<NotamItem> searchWithin(Polygon polygon, Pageable page);
-
   List<NotamItem> findByGeometryNear(Point point, Distance distance);
+  Page<NotamItem> findByGeometryNear(Point point, Distance distance, Pageable page);
 }

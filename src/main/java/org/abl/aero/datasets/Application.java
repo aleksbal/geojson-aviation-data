@@ -12,7 +12,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
   @Autowired
-  private NotamService importerNotamService;
+  private NotamService notamImporter;
 
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);
@@ -21,7 +21,7 @@ public class Application {
 	@PostConstruct
 	public void init() {
 		log.info("Start importing from JSON file...");
-		importerNotamService.importEvents();
+		notamImporter.importEvents();
 		log.info("Importing finished!");
 	}
 
