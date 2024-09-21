@@ -2,10 +2,14 @@ package org.abl.aero.datasets.airports;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import lombok.extern.slf4j.Slf4j;
 import org.abl.aero.datasets.airports.model.*;
+import org.abl.aero.datasets.notams.Notam;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.data.geo.Point;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.geo.GeoJsonPoint;
 import org.springframework.data.mongodb.core.geo.GeoJsonPolygon;
 import org.springframework.stereotype.Service;
@@ -15,13 +19,20 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Service
-public class AirportLoaderService {
+public class AirportLoader {
 
   @Autowired
   private AirportRepository airportRepository;
 
   private final ObjectMapper objectMapper = new ObjectMapper();
+  @Autowired
+  private MongoTemplate mongoTemplate;
+  @Value("${thisapp.file.airports}")
+  private String airports;
+  @Value("${thisapp.db.create}")
+  private Boolean shouldCreate;
 
   @PostConstruct
   public void loadData() {
@@ -29,8 +40,17 @@ public class AirportLoaderService {
   }
 
   private void loadAirports() {
+
+    if(!shouldCreate) {
+      log.info("Initial data import not required, exiting import...");
+      return;
+    }
+
+    log.info("Starting data import using low level db functions...");
+    mongoTemplate.dropCollection(Notam.class);
+
     try {
-      JsonNode rootNode = objectMapper.readTree(new ClassPathResource("airports.geojson").getInputStream());
+      JsonNode rootNode = objectMapper.readTree(new ClassPathResource(airports).getInputStream());
       JsonNode featuresNode = rootNode.get("features");
       List<AirportHeliport> airports = new ArrayList<>();
 

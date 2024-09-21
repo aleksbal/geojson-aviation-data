@@ -19,7 +19,7 @@ import org.springframework.data.mongodb.core.index.GeoSpatialIndexType;
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
-public class NotamItem {
+public class Notam {
 	
 	@Id
 	private String idb;

@@ -21,7 +21,7 @@ public class NotamResource {
   private NotamRepository repository;
 
   @GetMapping("/notamsarea")
-  public final List<NotamItem> getByLocations(
+  public final List<Notam> getByLocations(
     @RequestParam("lat") String latitude,
     @RequestParam("lon") String longitude,
     @RequestParam("radius") double distance) {
