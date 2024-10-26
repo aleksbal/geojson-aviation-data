@@ -1,6 +1,7 @@
 package org.abl.aero.datasets.notams;
 
 import java.util.List;
+import org.abl.aero.datasets.notams.model.Notam;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -16,10 +17,8 @@ import org.springframework.data.geo.Metrics;
  */
 @RestController
 public class NotamResource {
-
   @Autowired
   private NotamRepository repository;
-
   @GetMapping("/notamsarea")
   public final List<Notam> getByLocations(
     @RequestParam("lat") String latitude,

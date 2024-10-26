@@ -20,7 +20,4 @@ public interface AirportRepository extends MongoRepository<AirportHeliport, Stri
   List<AirportHeliport> findByNameContainingIgnoreCase(String name);
 
   // Find airports within a certain distance from a point
-  List<AirportHeliport> findByArpNear(Point location, Distance distance);
-
-  // Additional custom query methods as needed
 }

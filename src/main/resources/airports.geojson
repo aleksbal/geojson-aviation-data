@@ -37,24 +37,24 @@
             "direction": "090/270",
             "runwayElements": [
               {
-                "type": "THRESHOLD",
+                "type": "RUNWAY",
                 "sequenceNumber": 1,
                 "elevatedSurface": {
                   "geometry": {
                     "type": "Polygon",
                     "coordinates": [
                       [
-                        [-0.491694, 51.477500],
-                        [-0.491694, 51.479000],
-                        [-0.489194, 51.479000],
-                        [-0.489194, 51.477500],
-                        [-0.491694, 51.477500]
+                        [-0.491941, 51.470020],
+                        [-0.431941, 51.470020],
+                        [-0.431941, 51.475020],
+                        [-0.491941, 51.475020],
+                        [-0.491941, 51.470020]
                       ]
                     ]
                   },
-                  "horizontalAccuracy": 0.5,
+                  "horizontalAccuracy": 1.0,
                   "elevation": 83.0,
-                  "verticalAccuracy": 0.1
+                  "verticalAccuracy": 0.5
                 }
               }
             ]
@@ -66,7 +66,29 @@
             "surfaceComposition": "ASPHALT",
             "status": "Operational",
             "direction": "090/270",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [-0.461941, 51.470020],
+                        [-0.401941, 51.470020],
+                        [-0.401941, 51.475020],
+                        [-0.461941, 51.475020],
+                        [-0.461941, 51.470020]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 83.5,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           }
         ]
       }
@@ -106,7 +128,29 @@
             "surfaceComposition": "CONCRETE",
             "status": "Operational",
             "direction": "080/260",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [2.531000, 49.012779],
+                        [2.580000, 49.012779],
+                        [2.580000, 49.017779],
+                        [2.531000, 49.017779],
+                        [2.531000, 49.012779]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 392.0,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           },
           {
             "designator": "09R/27L",
@@ -115,7 +159,29 @@
             "surfaceComposition": "CONCRETE",
             "status": "Operational",
             "direction": "090/270",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [2.541000, 49.012779],
+                        [2.568000, 49.012779],
+                        [2.568000, 49.017779],
+                        [2.541000, 49.017779],
+                        [2.541000, 49.012779]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 392.5,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           }
         ]
       }
@@ -155,7 +221,29 @@
             "surfaceComposition": "ASPHALT",
             "status": "Operational",
             "direction": "040/220",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [-73.778139, 40.639766],
+                        [-73.763139, 40.656766],
+                        [-73.762139, 40.656766],
+                        [-73.777139, 40.639766],
+                        [-73.778139, 40.639766]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 13.0,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           },
           {
             "designator": "13L/31R",
@@ -164,7 +252,29 @@
             "surfaceComposition": "CONCRETE",
             "status": "Operational",
             "direction": "130/310",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [-73.775000, 40.641766],
+                        [-73.765000, 40.650000],
+                        [-73.764000, 40.650000],
+                        [-73.774000, 40.641766],
+                        [-73.775000, 40.641766]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 13.5,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           }
         ]
       }
@@ -204,7 +314,29 @@
             "surfaceComposition": "ASPHALT",
             "status": "Operational",
             "direction": "160/340",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [151.177222, -33.946111],
+                        [151.182222, -34.000000],
+                        [151.183222, -34.000000],
+                        [151.178222, -33.946111],
+                        [151.177222, -33.946111]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 21.0,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           },
           {
             "designator": "07/25",
@@ -213,7 +345,29 @@
             "surfaceComposition": "ASPHALT",
             "status": "Operational",
             "direction": "070/250",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [151.180000, -33.945000],
+                        [151.205000, -33.945000],
+                        [151.205000, -33.950000],
+                        [151.180000, -33.950000],
+                        [151.180000, -33.945000]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 21.5,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           }
         ]
       }
@@ -253,7 +407,29 @@
             "surfaceComposition": "CONCRETE",
             "status": "Operational",
             "direction": "160/340",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [139.781111, 35.552778],
+                        [139.786111, 35.600000],
+                        [139.787111, 35.600000],
+                        [139.782111, 35.552778],
+                        [139.781111, 35.552778]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 21.0,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           },
           {
             "designator": "05/23",
@@ -262,7 +438,29 @@
             "surfaceComposition": "CONCRETE",
             "status": "Operational",
             "direction": "050/230",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [139.785000, 35.550000],
+                        [139.825000, 35.550000],
+                        [139.825000, 35.555000],
+                        [139.785000, 35.555000],
+                        [139.785000, 35.550000]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 21.5,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           }
         ]
       }
@@ -302,7 +500,29 @@
             "surfaceComposition": "ASPHALT",
             "status": "Operational",
             "direction": "090/270",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [-46.655381, -23.626110],
+                        [-46.625000, -23.626110],
+                        [-46.625000, -23.621110],
+                        [-46.655381, -23.621110],
+                        [-46.655381, -23.626110]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 2459.0,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           },
           {
             "designator": "09R/27L",
@@ -311,7 +531,29 @@
             "surfaceComposition": "ASPHALT",
             "status": "Operational",
             "direction": "090/270",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [-46.652000, -23.626000],
+                        [-46.620000, -23.626000],
+                        [-46.620000, -23.621000],
+                        [-46.652000, -23.621000],
+                        [-46.652000, -23.626000]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 2459.5,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           }
         ]
       }
@@ -351,7 +593,29 @@
             "surfaceComposition": "CONCRETE",
             "status": "Operational",
             "direction": "070/250",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [13.287778, 52.559722],
+                        [13.327778, 52.559722],
+                        [13.327778, 52.564722],
+                        [13.287778, 52.564722],
+                        [13.287778, 52.559722]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 157.0,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           },
           {
             "designator": "07R/25L",
@@ -360,7 +624,29 @@
             "surfaceComposition": "CONCRETE",
             "status": "Operational",
             "direction": "070/250",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [13.290000, 52.559000],
+                        [13.330000, 52.559000],
+                        [13.330000, 52.564000],
+                        [13.290000, 52.564000],
+                        [13.290000, 52.559000]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 157.5,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           }
         ]
       }
@@ -400,7 +686,29 @@
             "surfaceComposition": "ASPHALT",
             "status": "Operational",
             "direction": "090/270",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [144.843333, -37.673333],
+                        [144.873333, -37.673333],
+                        [144.873333, -37.668333],
+                        [144.843333, -37.668333],
+                        [144.843333, -37.673333]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 434.0,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           },
           {
             "designator": "16/34",
@@ -409,7 +717,29 @@
             "surfaceComposition": "ASPHALT",
             "status": "Operational",
             "direction": "160/340",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [144.846000, -37.675000],
+                        [144.846000, -37.715000],
+                        [144.851000, -37.715000],
+                        [144.851000, -37.675000],
+                        [144.846000, -37.675000]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 434.5,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           }
         ]
       }
@@ -449,7 +779,29 @@
             "surfaceComposition": "CONCRETE",
             "status": "Operational",
             "direction": "050/230",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [31.405556, 30.121944],
+                        [31.445556, 30.121944],
+                        [31.445556, 30.126944],
+                        [31.405556, 30.126944],
+                        [31.405556, 30.121944]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 382.0,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           },
           {
             "designator": "05C/23C",
@@ -458,7 +810,29 @@
             "surfaceComposition": "CONCRETE",
             "status": "Operational",
             "direction": "050/230",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [31.408000, 30.121000],
+                        [31.448000, 30.121000],
+                        [31.448000, 30.126000],
+                        [31.408000, 30.126000],
+                        [31.408000, 30.121000]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 382.5,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           }
         ]
       }
@@ -498,7 +872,29 @@
             "surfaceComposition": "ASPHALT",
             "status": "Operational",
             "direction": "080/260",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [-157.922222, 21.318611],
+                        [-157.882222, 21.318611],
+                        [-157.882222, 21.323611],
+                        [-157.922222, 21.323611],
+                        [-157.922222, 21.318611]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 13.0,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           },
           {
             "designator": "04R/22L",
@@ -507,7 +903,29 @@
             "surfaceComposition": "ASPHALT",
             "status": "Operational",
             "direction": "040/220",
-            "runwayElements": []
+            "runwayElements": [
+              {
+                "type": "RUNWAY",
+                "sequenceNumber": 1,
+                "elevatedSurface": {
+                  "geometry": {
+                    "type": "Polygon",
+                    "coordinates": [
+                      [
+                        [-157.920000, 21.317000],
+                        [-157.890000, 21.347000],
+                        [-157.889000, 21.347000],
+                        [-157.919000, 21.317000],
+                        [-157.920000, 21.317000]
+                      ]
+                    ]
+                  },
+                  "horizontalAccuracy": 1.0,
+                  "elevation": 13.5,
+                  "verticalAccuracy": 0.5
+                }
+              }
+            ]
           }
         ]
       }

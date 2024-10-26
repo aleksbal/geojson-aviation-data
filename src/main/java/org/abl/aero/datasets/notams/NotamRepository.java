@@ -1,6 +1,7 @@
 package org.abl.aero.datasets.notams;
 
 import java.util.List;
+import org.abl.aero.datasets.notams.model.Notam;
 import org.springframework.data.geo.Polygon;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.rest.core.annotation.RepositoryRestResource;
@@ -16,7 +17,6 @@ import org.springframework.data.geo.Distance;
  */
 @RepositoryRestResource(collectionResourceRel = "notam", path = "notam")
 public interface NotamRepository extends MongoRepository<Notam, String> {
-
   List<Notam> findBySubject(@Param("subject") String subject);
   List<Notam> findByLocation(@Param("location") String location);
   List<Notam> findByArea(@Param("area") String area);

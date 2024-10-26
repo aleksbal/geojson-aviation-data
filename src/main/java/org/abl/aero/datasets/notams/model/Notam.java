@@ -1,4 +1,4 @@
-package org.abl.aero.datasets.notams;
+package org.abl.aero.datasets.notams.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
