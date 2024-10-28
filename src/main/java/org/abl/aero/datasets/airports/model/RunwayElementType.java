@@ -15,7 +15,9 @@ public enum RunwayElementType {
   OVERRUN_AREA("OVERRUN_AREA"),
   ACCELERATION_STOPWAY("ACCELERATION_STOPWAY"),
   SHOULDER("SHOULDER"),
-  SLOPE("SLOPE");
+  SLOPE("SLOPE"),
+
+  THRESHOLD("THRESHOLD");
 
   private final String value;
 

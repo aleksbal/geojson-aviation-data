@@ -35,3 +35,27 @@ out/
 
 ### VS Code ###
 .vscode/
+
+# Ignore build artifacts in the frontend folder
+/frontend/node_modules/
+/frontend/build/
+/frontend/dist/
+/frontend/.cache/
+/frontend/tmp/
+/frontend/temp/
+/frontend/coverage/
+
+# Ignore environment files in the frontend folder
+/frontend/.env
+/frontend/.env.*.local
+
+# Ignore log files in the frontend folder
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# Ignore specific editor and config files in frontend
+/frontend/.pnp/
+/frontend/.pnp.js
+/frontend/.DS_Store
+/frontend/.idea/

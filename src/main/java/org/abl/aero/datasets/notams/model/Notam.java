@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import java.time.LocalDateTime;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexed;
 import org.springframework.data.mongodb.core.index.GeoSpatialIndexType;
+import org.springframework.data.mongodb.core.mapping.Field;
 
 /**
  * Domain class for NOTAM message
@@ -50,6 +51,7 @@ public class Notam {
 	private Boolean isICAO;
 	private String Created;
 	private String key;
+
 	private String type;
 	private String stateCode;
 	private String stateName;
