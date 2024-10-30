@@ -2,7 +2,7 @@ package org.abl.aero.datasets.notams;
 
 import java.util.List;
 import org.abl.aero.datasets.notams.model.Notam;
-import org.abl.aero.datasets.notams.model.Feature;
+import org.abl.aero.datasets.notams.model.NotamFeature;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,13 +26,11 @@ public class NotamResource {
     @RequestParam("lon") String longitude,
     @RequestParam("radius") double distance) {
 
-    return this.repository.findByGeometryNear(new Point(Double.parseDouble(longitude), Double.parseDouble(latitude)),
+    return repository.findByGeometryNear(new Point(Double.parseDouble(longitude), Double.parseDouble(latitude)),
       new Distance(distance, Metrics.KILOMETERS));
   }
-
   @GetMapping("/api/notams")
-  public final List<Feature> getAll() {
-    return this.repository.findAll().stream()
-        .map(k -> new Feature("Feature", k.getGeometry(), k)).toList();
+  public final List<NotamFeature> getAll() {
+    return repository.findAll();
   }
 }

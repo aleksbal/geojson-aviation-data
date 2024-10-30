@@ -1,11 +1,9 @@
 package org.abl.aero.datasets.airports.model;
 
 import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.util.List;
 
-@Document(collection = "airport_heliports")
 @JsonIgnoreProperties(ignoreUnknown = true)
 public record AirportHeliport(
 		@Id

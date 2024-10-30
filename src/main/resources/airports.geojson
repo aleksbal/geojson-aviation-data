@@ -1,5 +1,4 @@
-{
-  "features": [
+ [
     {
       "type": "Feature",
       "geometry": {
@@ -931,4 +930,3 @@
       }
     }
   ]
-}

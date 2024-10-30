@@ -11,8 +11,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 public class Application {
 
-  @Autowired
-  private NotamLoader notamLoader;
+	@Autowired
+	private NotamLoader loader;
 
 	@Autowired
 	private AirportLoader airportLoader;

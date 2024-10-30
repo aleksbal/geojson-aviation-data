@@ -1,0 +1,452 @@
+[
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-77.037852, 38.898556]
+      },
+      "properties": {
+        "idb": "6035da6aab233e8499a8814b",
+        "id": "M3088/19",
+        "entity": "RW",
+        "status": "CL",
+        "condition": "Closed",
+        "subject": "runway",
+        "modifier": "closed",
+        "location": "KDCA",
+        "message": "Runway 01/19 closed for maintenance.",
+        "all": "M3088/19 NOTAMR M2987/19\nQ) ZDC/QMXLC/IV/BO /A /000/999/3853N07702W005\nA) KDCA B) 202410121000 C) 202410121800\nE) Runway 01/19 closed for maintenance.",
+        "startdate": "2024-10-12T10:00:00",
+        "enddate": "2024-10-12T18:00:00",
+        "isICAO": true,
+        "key": "M3088/19-KDCA",
+        "type": "airport",
+        "stateCode": "US",
+        "stateName": "United States",
+        "qcode": "MXLC",
+        "area": "ZDC",
+        "subArea": "Runway",
+        "created": "2024-10-01T12:44:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-0.4543, 51.4700]
+      },
+      "properties": {
+        "idb": "6035da6aab233e8499a8814c",
+        "id": "M3089/19",
+        "entity": "TW",
+        "status": "AC",
+        "condition": "Construction",
+        "subject": "taxiway",
+        "modifier": "closed",
+        "location": "EGLL",
+        "message": "Taxiway Alpha closed due to construction work.",
+        "all": "M3089/19 NOTAMR M2988/19\nQ) EGTT/QMXLC/IV/M /A /000/999/5147N00027W005\nA) EGLL B) 202410150600 C) 202410200600\nE) Taxiway Alpha closed due to construction work.",
+        "startdate": "2024-10-15T06:00:00",
+        "enddate": "2024-10-20T06:00:00",
+        "isICAO": true,
+        "key": "M3089/19-EGLL",
+        "type": "airport",
+        "stateCode": "UK",
+        "stateName": "United Kingdom",
+        "qcode": "MXLC",
+        "area": "EGTT",
+        "subArea": "Taxiway",
+        "created": "2024-10-05T12:44:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [-3.5675, 40.4685]
+      },
+      "properties": {
+        "idb": "6035da6aab233e8499a8814d",
+        "id": "M3090/19",
+        "entity": "RW",
+        "status": "CL",
+        "condition": "Maintenance",
+        "subject": "runway",
+        "modifier": "restricted",
+        "location": "LEMD",
+        "message": "Runway 14L/32R open for limited operations.",
+        "all": "M3090/19 NOTAMN\nQ) LECM/QMXLC/IV/M /A /000/999/4046N00334W005\nA) LEMD B) 202410101200 C) 202410102300\nE) Runway 14L/32R open for limited operations.",
+        "startdate": "2024-10-10T12:00:00",
+        "enddate": "2024-10-10T23:00:00",
+        "isICAO": true,
+        "key": "M3090/19-LEMD",
+        "type": "airport",
+        "stateCode": "ES",
+        "stateName": "Spain",
+        "qcode": "MXLC",
+        "area": "LECM",
+        "subArea": "Runway",
+        "created": "2024-10-01T12:44:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [2.55, 49.01]
+      },
+      "properties": {
+        "idb": "6035da6aab233e8499a8814e",
+        "id": "M3091/19",
+        "entity": "OB",
+        "status": "LT",
+        "condition": null,
+        "subject": "obstruction",
+        "modifier": "crane",
+        "location": "LFPG",
+        "message": "Crane operating at 150ft AGL 1NM east of airport.",
+        "all": "M3091/19 NOTAMN\nQ) LFEE/QOBCE/IV/M /A /000/999/4901N00255E005\nA) LFPG B) 202410080600 C) 202410150600\nE) Crane operating at 150ft AGL 1NM east of airport.",
+        "startdate": "2024-10-08T06:00:00",
+        "enddate": "2024-10-15T06:00:00",
+        "isICAO": true,
+        "key": "M3091/19-LFPG",
+        "type": "airport",
+        "stateCode": "FR",
+        "stateName": "France",
+        "qcode": "OBCE",
+        "area": "LFEE",
+        "subArea": "Obstruction",
+        "created": "2024-10-01T12:44:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [4.7634, 52.3086]
+      },
+      "properties": {
+        "idb": "6035da6aab233e8499a8814f",
+        "id": "M3092/19",
+        "entity": "RW",
+        "status": "LT",
+        "condition": "Wet",
+        "subject": "runway",
+        "modifier": "slippery",
+        "location": "EHAM",
+        "message": "Runway 18C/36C wet and slippery. Exercise caution.",
+        "all": "M3092/19 NOTAMN\nQ) EHAA/QMXLT/IV/M /A /000/999/5231N00446E005\nA) EHAM B) 202410050700 C) 202410051800\nE) Runway 18C/36C wet and slippery. Exercise caution.",
+        "startdate": "2024-10-05T07:00:00",
+        "enddate": "2024-10-05T18:00:00",
+        "isICAO": true,
+        "key": "M3092/19-EHAM",
+        "type": "airport",
+        "stateCode": "NL",
+        "stateName": "Netherlands",
+        "qcode": "MXLT",
+        "area": "EHAA",
+        "subArea": "Runway",
+        "created": "2024-10-01T12:44:00"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [13.2877, 52.5597]
+      },
+      "properties": {
+        "idb": "6035da6aab233e8499a88150",
+        "id": "M3093/19",
+        "entity": "LG",
+        "status": "AC",
+        "condition": "Damaged",
+        "subject": "lighting",
+        "modifier": "out of service",
+        "location": "EDDB",
+        "message": "Runway edge lighting on RWY 07L partially out of service.",
+        "all": "M3093/19 NOTAMN\nQ) EDGG/QLGAS/IV/M /A /000/999/5253N01317E005\nA) EDDB B) 202410120700 C) 202410122100\nE) Runway edge lighting on RWY 07L partially out of service.",
+        "startdate": "2024-10-12T07:00:00",
+        "enddate": "2024-10-12T21:00:00",
+        "isICAO": true,
+        "key": "M3093/19-EDDB",
+        "type": "airport",
+        "stateCode": "DE",
+        "stateName": "Germany",
+        "qcode": "LGAS",
+        "area": "EDGG",
+        "subArea": "Lighting",
+        "created": "2024-10-01T12:44:00"
+      }
+    },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-122.379, 37.6213]
+          },
+          "properties": {
+            "idb": "6035da6aab233e8499a88151",
+            "id": "M3100/19",
+            "entity": "RW",
+            "status": "CL",
+            "condition": "Closed",
+            "subject": "runway",
+            "modifier": "closed",
+            "location": "KSFO",
+            "message": "Runway 28L closed for resurfacing.",
+            "all": "M3100/19 NOTAMR M3001/19\nQ) ZOA/QMXLC/IV/BO /A /000/999/3742N12222W005\nA) KSFO B) 202410101000 C) 202410101800\nE) Runway 28L closed for resurfacing.",
+            "startdate": "2024-10-10T10:00:00",
+            "enddate": "2024-10-10T18:00:00",
+            "isICAO": true,
+            "key": "M3100/19-KSFO",
+            "type": "airport",
+            "stateCode": "US",
+            "stateName": "United States",
+            "qcode": "MXLC",
+            "area": "ZOA",
+            "subArea": "Runway",
+            "created": "2024-10-01T10:00:00"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [19.8958, 50.0777]
+          },
+          "properties": {
+            "idb": "6035da6aab233e8499a88152",
+            "id": "M3101/19",
+            "entity": "LG",
+            "status": "AC",
+            "condition": "Damaged",
+            "subject": "lighting",
+            "modifier": "out of service",
+            "location": "EPKK",
+            "message": "Runway lighting on RWY 07/25 partially out of service.",
+            "all": "M3101/19 NOTAMN\nQ) EPWW/QLGAS/IV/M /A /000/999/5004N01953E005\nA) EPKK B) 202410120600 C) 202410122300\nE) Runway lighting on RWY 07/25 partially out of service.",
+            "startdate": "2024-10-12T06:00:00",
+            "enddate": "2024-10-12T23:00:00",
+            "isICAO": true,
+            "key": "M3101/19-EPKK",
+            "type": "airport",
+            "stateCode": "PL",
+            "stateName": "Poland",
+            "qcode": "LGAS",
+            "area": "EPWW",
+            "subArea": "Lighting",
+            "created": "2024-10-01T12:44:00"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [151.2093, -33.8688]
+          },
+          "properties": {
+            "idb": "6035da6aab233e8499a88153",
+            "id": "M3102/19",
+            "entity": "RW",
+            "status": "AC",
+            "condition": "Wet",
+            "subject": "runway",
+            "modifier": "slippery",
+            "location": "YSSY",
+            "message": "Runway 16L wet and slippery due to rain. Caution advised.",
+            "all": "M3102/19 NOTAMN\nQ) YBBB/QMXLT/IV/M /A /000/999/3352S15113E005\nA) YSSY B) 202410100700 C) 202410101800\nE) Runway 16L wet and slippery due to rain. Caution advised.",
+            "startdate": "2024-10-10T07:00:00",
+            "enddate": "2024-10-10T18:00:00",
+            "isICAO": true,
+            "key": "M3102/19-YSSY",
+            "type": "airport",
+            "stateCode": "AU",
+            "stateName": "Australia",
+            "qcode": "MXLT",
+            "area": "YBBB",
+            "subArea": "Runway",
+            "created": "2024-10-01T12:44:00"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [139.7813, 35.5494]
+          },
+          "properties": {
+            "idb": "6035da6aab233e8499a88154",
+            "id": "M3103/19",
+            "entity": "RW",
+            "status": "CL",
+            "condition": "Scheduled",
+            "subject": "runway",
+            "modifier": "closed",
+            "location": "RJTT",
+            "message": "Runway 16L closed for scheduled maintenance.",
+            "all": "M3103/19 NOTAMN\nQ) RJJJ/QMXLC/IV/BO /A /000/999/3543N13946E005\nA) RJTT B) 202410150100 C) 202410151800\nE) Runway 16L closed for scheduled maintenance.",
+            "startdate": "2024-10-15T01:00:00",
+            "enddate": "2024-10-15T18:00:00",
+            "isICAO": true,
+            "key": "M3103/19-RJTT",
+            "type": "airport",
+            "stateCode": "JP",
+            "stateName": "Japan",
+            "qcode": "MXLC",
+            "area": "RJJJ",
+            "subArea": "Runway",
+            "created": "2024-10-01T12:44:00"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [-80.2870, 25.7959]
+          },
+          "properties": {
+            "idb": "6035da6aab233e8499a88155",
+            "id": "M3104/19",
+            "entity": "TW",
+            "status": "CL",
+            "condition": "Construction",
+            "subject": "taxiway",
+            "modifier": "closed",
+            "location": "KMIA",
+            "message": "Taxiway Alpha closed for resurfacing.",
+            "all": "M3104/19 NOTAMN\nQ) ZMA/QMXLC/IV/M /A /000/999/2557N08017W005\nA) KMIA B) 202410120600 C) 202410122300\nE) Taxiway Alpha closed for resurfacing.",
+            "startdate": "2024-10-12T06:00:00",
+            "enddate": "2024-10-12T23:00:00",
+            "isICAO": true,
+            "key": "M3104/19-KMIA",
+            "type": "airport",
+            "stateCode": "US",
+            "stateName": "United States",
+            "qcode": "MXLC",
+            "area": "ZMA",
+            "subArea": "Taxiway",
+            "created": "2024-10-01T12:44:00"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [103.994, 1.3644]
+          },
+          "properties": {
+            "idb": "6035da6aab233e8499a88156",
+            "id": "M3105/19",
+            "entity": "OB",
+            "status": "LT",
+            "condition": null,
+            "subject": "obstruction",
+            "modifier": "crane",
+            "location": "WSSS",
+            "message": "Crane operating 1NM east of RWY 02L, 200ft AGL.",
+            "all": "M3105/19 NOTAMN\nQ) WSJC/QOBCE/IV/M /A /000/999/0136N10359E005\nA) WSSS B) 202410080600 C) 202410090600\nE) Crane operating 1NM east of RWY 02L, 200ft AGL.",
+            "startdate": "2024-10-08T06:00:00",
+            "enddate": "2024-10-09T06:00:00",
+            "isICAO": true,
+            "key": "M3105/19-WSSS",
+            "type": "airport",
+            "stateCode": "SG",
+            "stateName": "Singapore",
+            "qcode": "OBCE",
+            "area": "WSJC",
+            "subArea": "Obstruction",
+            "created": "2024-10-01T12:44:00"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [8.5706, 50.0333]
+          },
+          "properties": {
+            "idb": "6035da6aab233e8499a88157",
+            "id": "M3106/19",
+            "entity": "NAV",
+            "status": "AC",
+            "condition": "Out of Service",
+            "subject": "navigation",
+            "modifier": "unavailable",
+            "location": "EDDF",
+            "message": "VOR 'FRA' out of service. Use alternate navigation.",
+            "all": "M3106/19 NOTAMN\nQ) EDGG/QNVAS/IV/BO /A /000/999/5002N00834E005\nA) EDDF B) 202410150600 C) 202410151800\nE) VOR 'FRA' out of service. Use alternate navigation.",
+            "startdate": "2024-10-15T06:00:00",
+            "enddate": "2024-10-15T18:00:00",
+            "isICAO": true,
+            "key": "M3106/19-EDDF",
+            "type": "airport",
+            "stateCode": "DE",
+            "stateName": "Germany",
+            "qcode": "NVAS",
+            "area": "EDGG",
+            "subArea": "Navigation",
+            "created": "2024-10-01T12:44:00"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [55.3644, 25.2532]
+          },
+          "properties": {
+            "idb": "6035da6aab233e8499a88158",
+            "id": "M3107/19",
+            "entity": "LG",
+            "status": "CL",
+            "condition": "Maintenance",
+            "subject": "lighting",
+            "modifier": "under maintenance",
+            "location": "OMDB",
+            "message": "Runway lights under maintenance. Possible reduced visibility.",
+            "all": "M3107/19 NOTAMN\nQ) OMAE/QLGAM/IV/M /A /000/999/2525N05521E005\nA) OMDB B) 202410120700 C) 202410120900\nE) Runway lights under maintenance. Possible reduced visibility.",
+            "startdate": "2024-10-12T07:00:00",
+            "enddate": "2024-10-12T09:00:00",
+            "isICAO": true,
+            "key": "M3107/19-OMDB",
+            "type": "airport",
+            "stateCode": "AE",
+            "stateName": "United Arab Emirates",
+            "qcode": "LGAM",
+            "area": "OMAE",
+            "subArea": "Lighting",
+            "created": "2024-10-01T12:44:00"
+          }
+        },
+        {
+          "type": "Feature",
+          "geometry": {
+            "type": "Point",
+            "coordinates": [144.8410, -37.6733]
+          },
+          "properties": {
+            "idb": "6035da6aab233e8499a88159",
+            "id": "M3108/19",
+            "entity": "RW",
+            "status": "AC",
+            "condition": "Resurfacing",
+            "subject": "runway",
+            "modifier": "open with restrictions",
+            "location": "YMML",
+            "message": "Runway 27 open with speed restrictions due to resurfacing.",
+            "all": "M3108/19 NOTAMN\nQ) YMMM/QMXLT/IV/M /A /000/999/3751S14450E005\nA) YMML B) 202410050700 C) 202410051900\nE) Runway 27 open with speed restrictions due to resurfacing.",
+            "startdate": "2024-10-05T07:00:00",
+            "enddate": "2024-10-05T19:00:00",
+            "isICAO": true,
+            "key": "M3108/19-YMML",
+            "type": "airport",
+            "stateCode": "AU",
+            "stateName": "Australia",
+            "qcode": "MXLT",
+            "area": "YMMM",
+            "subArea": "Runway",
+            "created": "2024-10-01T12:44:00"
+          }
+        }
+  ]

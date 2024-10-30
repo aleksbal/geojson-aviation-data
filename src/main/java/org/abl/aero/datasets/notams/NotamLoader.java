@@ -1,84 +1,60 @@
 package org.abl.aero.datasets.notams;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.mongodb.MongoException;
-import com.mongodb.client.MongoCollection;
-import com.mongodb.client.model.Indexes;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.annotation.PostConstruct;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.List;
 import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
+import org.abl.aero.datasets.notams.model.NotamFeature;
 import org.abl.aero.datasets.notams.model.Notam;
-import org.bson.Document;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.dao.DataAccessException;
-import org.springframework.data.mongodb.core.CollectionCallback;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.stereotype.Service;
 
-/**
- * On startup this service imports a JSON document from the classpath
- */
-@Slf4j
 @Service
+@Slf4j
 public class NotamLoader {
 
-    @Autowired
-    private NotamRepository eventRepository;
-
-    @Autowired
-    private MongoTemplate mongoTemplate;
-
-    @Value("${thisapp.file.notams}")
-    private String eventFile;
-
-    @Value("${thisapp.db.create}")
-    private Boolean shouldCreate;
-
-    @PostConstruct
-    public void loadNotams() {
-      loadData();
+  @Autowired
+  private NotamRepository repo;
+  @Autowired
+  private MongoTemplate template;
+  @Value("${thisapp.db.create}")
+  private Boolean shouldCreate;
+  @PostConstruct
+  public void loadObjects() throws Exception {
+    if(!shouldCreate) {
+      log.info("Initial data import not required, exiting import...");
+      return;
     }
-    public void loadData() {
+    template.dropCollection(Notam.class);
+    loadData();
+  }
 
-        if(!shouldCreate) {
-            log.info("Initial data import not required, exiting import...");
-            return;
-        }
+  public void loadData() throws Exception {
 
-        log.info("Starting data import using low level db functions...");
-        mongoTemplate.dropCollection(Notam.class);
-        mongoTemplate.execute(Notam.class, new CollectionCallback<Void>() {
+    if(!shouldCreate) {
+      log.info("Initial data import not required, exiting import...");
+      return;
+    }
 
-        @Override
-        public Void doInCollection(MongoCollection<Document> collection) throws MongoException, DataAccessException {
-             try {
-                    var reader = Files.newBufferedReader(Paths.get(
-                        Objects.requireNonNull(getClass().getClassLoader()
-                            .getResource(eventFile)).toURI()));
-                    var objectMapper = new ObjectMapper();
-                    var parser = objectMapper.readTree(reader);
+    log.info("Starting data import using low level db functions...");
+    template.dropCollection(NotamFeature.class);
 
-                    for (var eventItem : parser) {
-                            collection.insertOne(Document.parse(
-                                    //remove due to date serialization problem
-                                    eventItem.toString().replace(".000Z","")
-                            )
-                        );
-                    }
-                    // just for test purposes, it should be done by an annotation
-                    collection.createIndex(Indexes.geo2dsphere("geometry"));
+    var mapper = new ObjectMapper();
+    mapper.registerModule(new JavaTimeModule());
 
-             } catch (Exception e) {
-               throw new RuntimeException("Could not load event dataset!", e);
-             }
-             return null;
-           }
-        });
+    var reader = Files.newBufferedReader(Paths.get(
+        Objects.requireNonNull(getClass().getClassLoader()
+            .getResource("notams.geojson")).toURI()));
 
-        log.info("Loaded objects: " + mongoTemplate.count(new Query(), Notam.class));
-        }
+    List<NotamFeature> airports = mapper.readValue(reader, new TypeReference<>() {});
+
+    repo.saveAll(airports);
+  }
 }
