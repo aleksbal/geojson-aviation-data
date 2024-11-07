@@ -17,6 +17,37 @@ const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFe
     const currentLayer = layers[selectedLayerIndex];
     const features = currentLayer ? currentLayer.features : [];
 
+    // Function to calculate center coordinates for various geometry types
+    const getFeatureCenterCoordinates = (geometry) => {
+        if (!geometry) return null;
+
+        const { type, coordinates } = geometry;
+
+        switch (type) {
+            case 'Point':
+                return [coordinates[1], coordinates[0]]; // Directly use point coordinates
+
+            case 'LineString': {
+                // Calculate the midpoint for LineString
+                const midIndex = Math.floor(coordinates.length / 2);
+                return [coordinates[midIndex][1], coordinates[midIndex][0]];
+            }
+
+            case 'Polygon': {
+                // Calculate a simple centroid for Polygon
+                const flatCoords = coordinates[0];
+                const centroid = flatCoords.reduce(
+                    (acc, coord) => [acc[0] + coord[0], acc[1] + coord[1]],
+                    [0, 0]
+                ).map((sum) => sum / flatCoords.length);
+                return [centroid[1], centroid[0]];
+            }
+
+            default:
+                return null;
+        }
+    };
+
     // Helper component to fit bounds based on the layer's features
     const FitBoundsOnLoad = () => {
         const map = useMap();
