@@ -1,6 +1,6 @@
 // src/components/MapDisplay.jsx
-import React from 'react';
-import { MapContainer, TileLayer, GeoJSON, Popup } from 'react-leaflet';
+import React, { useEffect } from 'react';
+import { MapContainer, TileLayer, GeoJSON, useMap } from 'react-leaflet';
 import CenterMapOnFeature from './CenterMapOnFeature';
 import PopupContent from './PopupContent';
 import 'leaflet/dist/leaflet.css';
@@ -14,12 +14,38 @@ const customIcon = new L.Icon({
 
 const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFeature }) => {
     const currentLayer = layers[selectedLayerIndex];
-    if (!currentLayer) return null;
+    const features = currentLayer ? currentLayer.features : [];
 
-    // Only display features of the current layer
-    const features = currentLayer.features;
+    // Helper component to fit bounds based on the layer's features
+    const FitBoundsOnLoad = () => {
+        const map = useMap();
+        useEffect(() => {
+            if (!features || features.length === 0) return;
 
-    // Define the style for features, highlighting the selected feature
+            const latLngs = [];
+            features.forEach((feature) => {
+                const geometry = feature.geometry;
+
+                // Ensure geometry and coordinates are defined
+                if (geometry && geometry.coordinates) {
+                    const { coordinates, type } = geometry;
+
+                    if (type === "Point") {
+                        latLngs.push([coordinates[1], coordinates[0]]);
+                    } else if (type === "LineString" || type === "Polygon") {
+                        coordinates.forEach(coord => latLngs.push([coord[1], coord[0]]));
+                    }
+                }
+            });
+
+            if (latLngs.length > 0) {
+                map.fitBounds(latLngs);
+            }
+        }, [features, map]);
+
+        return null;
+    };
+
     const getFeatureStyle = (feature) => {
         const isSelected = selectedFeature && selectedFeature.properties.id === feature.properties.id;
 
@@ -38,23 +64,29 @@ const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFe
 
     return (
         <MapContainer center={[47.943889, -2.181943]} zoom={10} style={{ height: "70vh", width: "100%" }}>
+            {/* Always display the base map layer */}
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
-            {/* Render only the active layer's features */}
-            <GeoJSON
-                key={currentLayer.query}  // Use query or unique ID as key to force re-rendering on layer change
-                data={features}
-                onEachFeature={onEachFeature}
-                pointToLayer={(feature, latlng) => {
-                    if (feature.geometry?.type === "Point") {
-                        return L.marker(latlng, { icon: customIcon });
-                    }
-                    return null;
-                }}
-                style={getFeatureStyle}  // Apply dynamic style for selected feature
-            />
+            {/* Fit map bounds to current layer's features on load */}
+            {features.length > 0 && <FitBoundsOnLoad />}
 
-            {/* Conditionally render PopupContent and CenterMapOnFeature only if geometry exists */}
+            {/* Conditionally render the GeoJSON layer if features are available */}
+            {features.length > 0 && (
+                <GeoJSON
+                    key={currentLayer.query}  // Unique key to force re-rendering on layer change
+                    data={features}
+                    onEachFeature={onEachFeature}
+                    pointToLayer={(feature, latlng) => {
+                        if (feature.geometry?.type === "Point") {
+                            return L.marker(latlng, { icon: customIcon });
+                        }
+                        return null;
+                    }}
+                    style={getFeatureStyle}
+                />
+            )}
+
+            {/* Conditionally render popup and centering only if a feature is selected */}
             {selectedFeature && selectedFeature.geometry && (
                 <>
                     <PopupContent feature={selectedFeature} />

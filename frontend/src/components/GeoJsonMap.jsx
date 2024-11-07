@@ -7,6 +7,7 @@ import QueryForm from './QueryForm';
 import LayerTabs from './LayerTabs';
 import MapDisplay from './MapDisplay';
 import FeatureList from './FeatureList';
+import ErrorBoundary from './ErrorBoundary';
 
 const GeoJsonMap = () => {
     const [layers, setLayers] = useState([]);
@@ -14,10 +15,9 @@ const GeoJsonMap = () => {
     const [selectedFeature, setSelectedFeature] = useState(null);
     const [error, setError] = useState(null);
 
-    // Add a new layer and set it as the selected layer
     const handleAddLayer = (newLayer) => {
         setLayers((prevLayers) => [...prevLayers, newLayer]);
-        setSelectedLayerIndex(layers.length);  // Automatically select the new layer
+        setSelectedLayerIndex(layers.length);
     };
 
     return (
@@ -38,12 +38,14 @@ const GeoJsonMap = () => {
 
                 <Grid container spacing={2} style={{ marginTop: '20px' }}>
                     <Grid item xs={12} md={8}>
-                        <MapDisplay
-                            layers={layers}
-                            selectedLayerIndex={selectedLayerIndex}
-                            selectedFeature={selectedFeature}
-                            setSelectedFeature={setSelectedFeature}
-                        />
+                        <ErrorBoundary>
+                            <MapDisplay
+                                layers={layers}
+                                selectedLayerIndex={selectedLayerIndex}
+                                selectedFeature={selectedFeature}
+                                setSelectedFeature={setSelectedFeature}
+                            />
+                        </ErrorBoundary>
                     </Grid>
                     <Grid item xs={12} md={4}>
                         <FeatureList

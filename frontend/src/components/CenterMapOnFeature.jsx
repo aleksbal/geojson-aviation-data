@@ -1,4 +1,3 @@
-// src/components/CenterMapOnFeature.jsx
 import { useMap } from 'react-leaflet';
 import { useEffect } from 'react';
 
