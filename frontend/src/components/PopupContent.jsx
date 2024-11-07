@@ -1,4 +1,3 @@
-// src/components/PopupContent.jsx
 import React from 'react';
 import { Popup } from 'react-leaflet';
 import { Typography } from '@mui/material';

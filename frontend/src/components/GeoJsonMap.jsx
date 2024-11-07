@@ -1,4 +1,3 @@
-// src/components/GeoJsonMap.jsx
 import React, { useState } from 'react';
 import { Container, Grid } from '@mui/material';
 import Header from './Header';

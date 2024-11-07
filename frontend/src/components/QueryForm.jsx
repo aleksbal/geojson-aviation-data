@@ -1,4 +1,3 @@
-// src/components/QueryForm.jsx
 import React, { useState } from 'react';
 import { TextField, Button, Grid } from '@mui/material';
 

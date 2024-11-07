@@ -1,4 +1,3 @@
-// src/components/MapDisplay.jsx
 import React from 'react';
 import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
 import CenterMapOnFeature from './CenterMapOnFeature';

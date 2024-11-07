@@ -1,4 +1,3 @@
-// src/components/LayerTabs.jsx
 import React from 'react';
 import { Tabs, Tab, Box, IconButton } from '@mui/material';
 import DeleteIcon from '@mui/icons-material/Close';

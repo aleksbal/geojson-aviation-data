@@ -1,4 +1,3 @@
-// src/components/FeatureList.jsx
 import React from 'react';
 import { List, ListItem, ListItemText, Divider, Typography } from '@mui/material';
 
