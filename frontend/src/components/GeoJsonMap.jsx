@@ -1,3 +1,4 @@
+// src/components/GeoJsonMap.jsx
 import React, { useState } from 'react';
 import { Container, Grid } from '@mui/material';
 import Header from './Header';
@@ -13,7 +14,7 @@ const GeoJsonMap = () => {
     const [selectedFeature, setSelectedFeature] = useState(null);
     const [error, setError] = useState(null);
 
-    // Handle adding new layers and automatically select the new layer
+    // Add a new layer and set it as the selected layer
     const handleAddLayer = (newLayer) => {
         setLayers((prevLayers) => [...prevLayers, newLayer]);
         setSelectedLayerIndex(layers.length);  // Automatically select the new layer

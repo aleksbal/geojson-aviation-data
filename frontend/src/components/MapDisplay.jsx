@@ -1,5 +1,6 @@
+// src/components/MapDisplay.jsx
 import React from 'react';
-import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, Popup } from 'react-leaflet';
 import CenterMapOnFeature from './CenterMapOnFeature';
 import PopupContent from './PopupContent';
 import 'leaflet/dist/leaflet.css';
@@ -15,6 +16,9 @@ const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFe
     const currentLayer = layers[selectedLayerIndex];
     if (!currentLayer) return null;
 
+    // Only display features of the current layer
+    const features = currentLayer.features;
+
     const onEachFeature = (feature, layer) => {
         layer.on('click', () => setSelectedFeature(feature));
     };
@@ -22,9 +26,11 @@ const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFe
     return (
         <MapContainer center={[47.943889, -2.181943]} zoom={10} style={{ height: "70vh", width: "100%" }}>
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+
+            {/* Render only the active layer's features */}
             <GeoJSON
-                key={currentLayer.id}  // Unique key for each layer
-                data={currentLayer.features}
+                key={currentLayer.query}  // Use query or unique ID as key to force re-rendering on layer change
+                data={features}
                 onEachFeature={onEachFeature}
                 pointToLayer={(feature, latlng) => {
                     if (feature.geometry?.type === "Point") {
@@ -38,6 +44,8 @@ const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFe
                     return { color: 'red' };
                 }}
             />
+
+            {/* Conditionally render PopupContent and CenterMapOnFeature only if geometry exists */}
             {selectedFeature && selectedFeature.geometry && (
                 <>
                     <PopupContent feature={selectedFeature} />
