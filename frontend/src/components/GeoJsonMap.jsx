@@ -1,6 +1,6 @@
 // src/components/GeoJsonMap.jsx
 import React, { useState } from 'react';
-import { Container, Grid } from '@mui/material';
+import { Container } from '@mui/material';
 import Header from './Header';
 import Footer from './Footer';
 import QueryForm from './QueryForm';
@@ -8,6 +8,7 @@ import LayerTabs from './LayerTabs';
 import MapDisplay from './MapDisplay';
 import FeatureList from './FeatureList';
 import ErrorBoundary from './ErrorBoundary';
+import Split from 'react-split';
 
 const GeoJsonMap = () => {
     const [layers, setLayers] = useState([]);
@@ -36,8 +37,17 @@ const GeoJsonMap = () => {
                     setLayers={setLayers}
                 />
 
-                <Grid container spacing={2} style={{ marginTop: '20px' }}>
-                    <Grid item xs={12} md={8}>
+                {/* Split component for resizable Map and List sections */}
+                <Split
+                    className="split" /* Ensure this class matches your CSS */
+                    sizes={[70, 30]} /* Initial width percentages */
+                    minSize={200} /* Minimum width of each panel */
+                    gutterSize={10} /* Divider size */
+                    direction="horizontal"
+                    style={{ display: 'flex', width: '100%', marginTop: '20px', height: '70vh' }}
+                >
+                    {/* Map Section */}
+                    <div style={{ flexGrow: 1 }}>
                         <ErrorBoundary>
                             <MapDisplay
                                 layers={layers}
@@ -46,15 +56,17 @@ const GeoJsonMap = () => {
                                 setSelectedFeature={setSelectedFeature}
                             />
                         </ErrorBoundary>
-                    </Grid>
-                    <Grid item xs={12} md={4}>
+                    </div>
+
+                    {/* List Section (Always visible, even when empty) */}
+                    <div style={{ overflowY: 'auto', paddingRight: '10px' }}>
                         <FeatureList
                             layers={layers}
                             selectedLayerIndex={selectedLayerIndex}
                             setSelectedFeature={setSelectedFeature}
                         />
-                    </Grid>
-                </Grid>
+                    </div>
+                </Split>
             </Container>
             <Footer />
         </div>

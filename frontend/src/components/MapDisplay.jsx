@@ -1,5 +1,5 @@
 // src/components/MapDisplay.jsx
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { MapContainer, TileLayer, GeoJSON, useMap } from 'react-leaflet';
 import CenterMapOnFeature from './CenterMapOnFeature';
 import PopupContent from './PopupContent';
@@ -13,6 +13,7 @@ const customIcon = new L.Icon({
 });
 
 const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFeature }) => {
+    const mapContainerRef = useRef(null);  // Reference to the MapContainer div
     const currentLayer = layers[selectedLayerIndex];
     const features = currentLayer ? currentLayer.features : [];
 
@@ -62,8 +63,29 @@ const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFe
         layer.on('click', () => setSelectedFeature(feature));
     };
 
+    useEffect(() => {
+        const map = mapContainerRef.current?.leafletElement;
+
+        // Ensure map resizes properly when the container size changes
+        const resizeObserver = new ResizeObserver(() => {
+            if (map) {
+                map.invalidateSize();
+            }
+        });
+
+        if (mapContainerRef.current) {
+            resizeObserver.observe(mapContainerRef.current);
+        }
+
+        return () => {
+            if (mapContainerRef.current) {
+                resizeObserver.unobserve(mapContainerRef.current);
+            }
+        };
+    }, []);
+
     return (
-        <MapContainer center={[47.943889, -2.181943]} zoom={10} style={{ height: "70vh", width: "100%" }}>
+        <MapContainer ref={mapContainerRef} center={[47.943889, -2.181943]} zoom={10} style={{ height: "70vh", width: "100%" }}>
             {/* Always display the base map layer */}
             <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
 
