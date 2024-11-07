@@ -17,7 +17,7 @@ import org.springframework.data.geo.Metrics;
  * to be used in MongoDB geospatial query.
  */
 @RestController
-public class NotamResource {
+public class NotamEndpoint {
   @Autowired
   private NotamRepository repository;
   @GetMapping("/api/notam")

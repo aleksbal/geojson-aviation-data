@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { MapContainer, TileLayer, GeoJSON, Popup, useMap } from 'react-leaflet';
+import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { AppBar, Toolbar, Typography, Container, Grid, List, ListItem, ListItemText, IconButton, Box, Divider, Tabs, Tab, TextField, Button, Alert } from '@mui/material';
 import PlaceIcon from '@mui/icons-material/Place';
 import TimelineIcon from '@mui/icons-material/Timeline';
 import TerrainIcon from '@mui/icons-material/Terrain';
 import DeleteIcon from '@mui/icons-material/Close';
+
+const customIcon = new L.Icon({
+    iconUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+});
 
 const GeoJsonMap = () => {
     const [layers, setLayers] = useState([]);  // Manage multiple layers
@@ -17,7 +24,7 @@ const GeoJsonMap = () => {
 
     const fetchLayerData = async (query) => {
         setLoading(true);
-        setError(null);  // Clear previous error state on new query
+        setError(null);
         try {
             const response = await fetch(query);
             if (!response.ok) {
@@ -26,8 +33,8 @@ const GeoJsonMap = () => {
             const data = await response.json();
 
             const geoJsonFeatureCollection = {
-                query: query,  // Store the query for this layer
-                features: data,
+                query: query,
+                features: JSON.parse(JSON.stringify(data)),  // Deep clone data to ensure independence
             };
 
             setLayers((prevLayers) => [...prevLayers, geoJsonFeatureCollection]);
@@ -36,6 +43,27 @@ const GeoJsonMap = () => {
             setError(`Unable to fetch data. ${error.message}`);
         } finally {
             setLoading(false);
+        }
+    };
+
+    const handleFileUpload = (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    const geoJsonFeatureCollection = {
+                        query: `Uploaded: ${file.name}`,
+                        features: JSON.parse(JSON.stringify(data.features || [data])),  // Deep clone to ensure unique layer data
+                    };
+                    setLayers((prevLayers) => [...prevLayers, geoJsonFeatureCollection]);
+                    setSelectedLayerIndex(layers.length);  // Set the newly created layer as active
+                } catch (error) {
+                    setError("Invalid GeoJSON file format. Please upload a valid file.");
+                }
+            };
+            reader.readAsText(file);
         }
     };
 
@@ -118,11 +146,11 @@ const GeoJsonMap = () => {
         const validFeatures = currentLayer.features.filter(feature => {
             const coordinates = feature.geometry?.coordinates;
             return (
-                feature.geometry?.type === "Point" &&
+                feature.geometry?.type &&
                 Array.isArray(coordinates) &&
-                coordinates.length === 2 &&
-                typeof coordinates[0] === "number" &&
-                typeof coordinates[1] === "number"
+                (feature.geometry.type === "Point"
+                    ? coordinates.length === 2 && typeof coordinates[0] === "number" && typeof coordinates[1] === "number"
+                    : coordinates.length >= 2)  // LineString and Polygon need at least 2 points
             );
         });
 
@@ -153,11 +181,19 @@ const GeoJsonMap = () => {
                             <GeoJSON
                                 data={validFeatures}
                                 onEachFeature={onEachFeature}
-                                pointToLayer={(feature, latlng) => L.marker(latlng)}
-                                style={feature => {
-                                    if (feature.geometry.type === "Polygon" || feature.geometry.type === "LineString") {
-                                        return { color: 'blue' };
+                                pointToLayer={(feature, latlng) => {
+                                    if (feature.geometry.type === "Point") {
+                                        return L.marker(latlng, { icon: customIcon });
                                     }
+                                    return null;
+                                }}
+                                style={(feature) => {
+                                    if (feature.geometry.type === "LineString") {
+                                        return { color: 'green', weight: 4 };
+                                    } else if (feature.geometry.type === "Polygon") {
+                                        return { color: 'blue', weight: 2, fillOpacity: 0.3 };
+                                    }
+                                    return { color: 'red' };
                                 }}
                             />
                         )}
@@ -236,11 +272,11 @@ const GeoJsonMap = () => {
                 </Toolbar>
             </AppBar>
 
-            {/* Query Form */}
+            {/* Query Form and File Upload */}
             <Container maxWidth="xl" style={{ marginTop: '20px' }}>
                 <form onSubmit={handleQuerySubmit}>
                     <Grid container spacing={2}>
-                        <Grid item xs={10}>
+                        <Grid item xs={8}>
                             <TextField
                                 fullWidth
                                 label="Enter Query"
@@ -253,6 +289,20 @@ const GeoJsonMap = () => {
                             <Button type="submit" variant="contained" color="primary" fullWidth>
                                 {loading ? 'Loading...' : 'Submit'}
                             </Button>
+                        </Grid>
+                        <Grid item xs={2}>
+                            <input
+                                type="file"
+                                accept=".geojson,.json"
+                                onChange={handleFileUpload}
+                                style={{ display: 'none' }}
+                                id="upload-file"
+                            />
+                            <label htmlFor="upload-file">
+                                <Button variant="contained" color="secondary" component="span" fullWidth>
+                                    Upload GeoJSON
+                                </Button>
+                            </label>
                         </Grid>
                     </Grid>
                 </form>
