@@ -1,13 +1,10 @@
 import React from 'react';
-import GeoJsonMap from './GeoJsonMap';
+import GeoJsonMap from './components/GeoJsonMap';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>GeoJSON Map</h1>
-      <GeoJsonMap />  {/* Use the GeoJsonMap component */}
-    </div>
-  );
-}
+const App = () => {
+    return (
+        <GeoJsonMap />
+    );
+};
 
 export default App;

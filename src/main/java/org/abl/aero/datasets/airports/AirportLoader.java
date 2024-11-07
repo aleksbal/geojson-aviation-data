@@ -7,7 +7,6 @@ import java.nio.file.Paths;
 import java.util.List;
 import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
-import org.abl.aero.datasets.airports.model.AirportHeliport;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.abl.aero.datasets.airports.model.AhpFeature;
 import org.springframework.beans.factory.annotation.Autowired;
