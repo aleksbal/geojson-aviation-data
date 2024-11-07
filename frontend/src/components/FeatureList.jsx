@@ -1,19 +1,18 @@
+// src/components/FeatureList.jsx
 import React from 'react';
 import { List, ListItem, ListItemText, Divider, Typography } from '@mui/material';
 
 const FeatureList = ({ layers, selectedLayerIndex, setSelectedFeature }) => {
     const currentLayer = layers[selectedLayerIndex];
-
-    // Add a fallback to prevent errors if currentLayer or currentLayer.features is undefined
-    const features = currentLayer?.features || [];
+    if (!currentLayer) return null;
 
     return (
         <div style={{ height: '70vh', overflowY: 'auto', paddingRight: '10px' }}>
             <Typography variant="h6" gutterBottom>
-                Feature List for Query: {currentLayer?.query || 'No query available'}
+                Feature List for Query: {currentLayer.query}
             </Typography>
             <List>
-                {features.map((feature, index) => {
+                {currentLayer.features.map((feature, index) => {
                     const geometryType = feature.geometry?.type;
                     const coordinates = feature.geometry?.coordinates;
                     const message = feature.properties?.message || "No message available";

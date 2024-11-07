@@ -19,6 +19,19 @@ const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFe
     // Only display features of the current layer
     const features = currentLayer.features;
 
+    // Define the style for features, highlighting the selected feature
+    const getFeatureStyle = (feature) => {
+        const isSelected = selectedFeature && selectedFeature.properties.id === feature.properties.id;
+
+        if (feature.geometry?.type === "LineString") {
+            return { color: isSelected ? 'yellow' : 'green', weight: isSelected ? 6 : 4 };
+        }
+        if (feature.geometry?.type === "Polygon") {
+            return { color: isSelected ? 'yellow' : 'blue', weight: isSelected ? 4 : 2, fillOpacity: 0.3 };
+        }
+        return { color: isSelected ? 'yellow' : 'red' };
+    };
+
     const onEachFeature = (feature, layer) => {
         layer.on('click', () => setSelectedFeature(feature));
     };
@@ -38,11 +51,7 @@ const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFe
                     }
                     return null;
                 }}
-                style={(feature) => {
-                    if (feature.geometry?.type === "LineString") return { color: 'green', weight: 4 };
-                    if (feature.geometry?.type === "Polygon") return { color: 'blue', weight: 2, fillOpacity: 0.3 };
-                    return { color: 'red' };
-                }}
+                style={getFeatureStyle}  // Apply dynamic style for selected feature
             />
 
             {/* Conditionally render PopupContent and CenterMapOnFeature only if geometry exists */}
