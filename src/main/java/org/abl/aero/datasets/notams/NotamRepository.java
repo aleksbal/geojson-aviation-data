@@ -18,12 +18,12 @@ import org.springframework.data.geo.Distance;
  */
 @RepositoryRestResource(collectionResourceRel = "notam", path = "notam")
 public interface NotamRepository extends MongoRepository<NotamFeature, String> {
-  List<Notam> findByPropertiesSubject(@Param("subject") String subject);
-  List<Notam> findByPropertiesLocation(@Param("location") String location);
+  List<NotamFeature> findByPropertiesSubject(@Param("subject") String subject);
+  List<NotamFeature> findByPropertiesLocation(@Param("location") String location);
   @Query("{'properties.message':{'$regex':'?0','$options':'i'}}")
-  Page<Notam> searchByMessage(String pattern, Pageable page);
+  Page<NotamFeature> searchByMessage(String pattern, Pageable page);
   @Query("{'properties.message':{'$geoWithin':'?0'}}")
-  Page<Notam> searchWithin(Polygon polygon, Pageable page);
-  List<Notam> findByGeometryNear(Point point, Distance distance);
-  Page<Notam> findByGeometryNear(Point point, Distance distance, Pageable page);
+  Page<NotamFeature> searchWithin(Polygon polygon, Pageable page);
+  List<NotamFeature> findByGeometryNear(Point point, Distance distance);
+  Page<NotamFeature> findByGeometryNear(Point point, Distance distance, Pageable page);
 }

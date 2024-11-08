@@ -6,9 +6,9 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import jakarta.annotation.PostConstruct;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
 import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
+import org.abl.aero.datasets.notams.model.FeatureCollection;
 import org.abl.aero.datasets.notams.model.NotamFeature;
 import org.abl.aero.datasets.notams.model.Notam;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,8 +53,8 @@ public class NotamLoader {
         Objects.requireNonNull(getClass().getClassLoader()
             .getResource("notams.geojson")).toURI()));
 
-    List<NotamFeature> airports = mapper.readValue(reader, new TypeReference<>() {});
+    FeatureCollection notams = mapper.readValue(reader, new TypeReference<>() {});
 
-    repo.saveAll(airports);
+    repo.saveAll(notams.features());
   }
 }

@@ -9,7 +9,7 @@ const QueryForm = ({ addLayer, setError }) => {
             const response = await fetch(query);
             if (!response.ok) throw new Error(`API call failed with status: ${response.status}`);
             const data = await response.json();
-            const layer = { query, features: data };
+            const layer = { query, features: data.features || [data]};
             addLayer(layer);
         } catch (error) {
             setError(`Unable to fetch data: ${error.message}`);

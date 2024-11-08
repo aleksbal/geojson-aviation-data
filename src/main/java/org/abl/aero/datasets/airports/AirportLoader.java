@@ -4,11 +4,11 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import jakarta.annotation.PostConstruct;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.List;
 import java.util.Objects;
 import lombok.extern.slf4j.Slf4j;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.abl.aero.datasets.airports.model.AhpFeature;
+import org.abl.aero.datasets.airports.model.FeatureCollection;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -44,8 +44,8 @@ public class AirportLoader {
         Objects.requireNonNull(getClass().getClassLoader()
             .getResource("airports.geojson")).toURI()));
 
-    List<AhpFeature> airports = mapper.readValue(reader, new TypeReference<>() {});
+    var airports = mapper.readValue(reader, new TypeReference<FeatureCollection>() {});
 
-    repo.saveAll(airports);
+    repo.saveAll(airports.features());
   }
 }

@@ -90,8 +90,42 @@ const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFe
         return { color: isSelected ? 'green' : 'blue' };
     };
 
+      // Function to style each point feature as a CircleMarker and change color when selected
+    const pointToLayer = (feature, latlng) => {
+        return L.circleMarker(latlng, {
+            radius: 10,
+            fillColor: "blue", // Default color
+            color: "blue",
+            weight: 1,
+            opacity: 1,
+            fillOpacity: 0.6
+        });
+    };
+
     const onEachFeature = (feature, layer) => {
-        layer.on('click', () => setSelectedFeature(feature));
+      layer.on({
+        click: () => {
+
+          console.log(feature);
+          console.log(selectedFeature);
+
+          if (selectedFeature == feature) {
+              setSelectedFeature(null);
+              layer.setStyle({
+                fillColor: "blue", // Highlight color
+                color: "blue"
+              });
+              return;
+          }
+
+          setSelectedFeature(feature);
+          console.log(selectedFeature);
+          layer.setStyle({
+            fillColor: "red", // Highlight color
+            color: "red"
+          });
+        }
+      });
     };
 
     useEffect(() => {
@@ -129,24 +163,11 @@ const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFe
                     key={currentLayer.query}  // Unique key to force re-rendering on layer change
                     data={features}
                     onEachFeature={onEachFeature}
-                    pointToLayer={(feature, latlng) => {
-                        if (feature.geometry?.type === "Point") {
-                            return L.marker(latlng, { icon: customIcon });
-                        }
-                        return null;
-                    }}
+                    pointToLayer={pointToLayer}
                     style={getFeatureStyle}
                 />
             )}
 
-            {selectedFeature && selectedFeature.geometry && (
-                <>
-                    <CenterMapOnFeature
-                        coordinates={selectedFeature.geometry.coordinates}
-                        geometryType={selectedFeature.geometry.type}
-                    />
-                </>
-            )}
         </MapContainer>
     );
 };

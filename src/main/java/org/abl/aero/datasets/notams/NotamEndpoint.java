@@ -1,8 +1,6 @@
 package org.abl.aero.datasets.notams;
 
-import java.util.List;
-import org.abl.aero.datasets.notams.model.Notam;
-import org.abl.aero.datasets.notams.model.NotamFeature;
+import org.abl.aero.datasets.notams.model.FeatureCollection;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,17 +18,20 @@ import org.springframework.data.geo.Metrics;
 public class NotamEndpoint {
   @Autowired
   private NotamRepository repository;
-  @GetMapping("/api/notam")
-  public final List<Notam> getByLocations(
+  @GetMapping("/api/notams")
+  public final FeatureCollection getByLocations(
     @RequestParam("lat") String latitude,
     @RequestParam("lon") String longitude,
     @RequestParam("radius") double distance) {
 
-    return repository.findByGeometryNear(new Point(Double.parseDouble(longitude), Double.parseDouble(latitude)),
-      new Distance(distance, Metrics.KILOMETERS));
+    var features = repository.findByGeometryNear(
+        new Point(Double.parseDouble(longitude), Double.parseDouble(latitude)),
+      new Distance(distance, Metrics.KILOMETERS)).stream().toList();
+
+    return new FeatureCollection("NOTAM", features);
   }
-  @GetMapping("/api/notams")
-  public final List<NotamFeature> getAll() {
-    return repository.findAll();
+  @GetMapping("/api/allnotams")
+  public final FeatureCollection getAll() {
+    return new FeatureCollection("FeatureCollection", repository.findAll());
   }
 }
