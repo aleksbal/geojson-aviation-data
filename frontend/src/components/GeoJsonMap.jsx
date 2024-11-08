@@ -14,23 +14,24 @@ import Split from 'react-split';
 const GeoJsonMap = () => {
     const [layers, setLayers] = useState([]);
     const [selectedLayerIndex, setSelectedLayerIndex] = useState(0);
-    const [selectedFeatures, setSelectedFeatures] = useState({}); // Store selected feature per layer
+    const [selectedFeatures, setSelectedFeatures] = useState({}); // Track selected feature per layer
     const [error, setError] = useState(null);
 
-    const handleAddLayer = (newLayer) => {
-        setLayers((prevLayers) => [...prevLayers, newLayer]);
-        setSelectedLayerIndex(layers.length);
-    };
-
-    const handleSetSelectedFeature = (feature) => {
+    // Function to set the selected feature for the current layer
+    const setSelectedFeature = (feature) => {
         setSelectedFeatures((prevSelectedFeatures) => ({
             ...prevSelectedFeatures,
             [selectedLayerIndex]: feature,
         }));
     };
 
+    const handleAddLayer = (newLayer) => {
+        setLayers((prevLayers) => [...prevLayers, newLayer]);
+        setSelectedLayerIndex(layers.length);
+    };
+
     const handleDeleteLayer = (index) => {
-        // Remove the layer
+        // Remove the layer from the list
         setLayers((prevLayers) => prevLayers.filter((_, i) => i !== index));
 
         // Remove the selected feature for the deleted layer
@@ -40,8 +41,17 @@ const GeoJsonMap = () => {
             return updatedFeatures;
         });
 
-        // Adjust selectedLayerIndex to ensure it remains valid
-        setSelectedLayerIndex((prevIndex) => Math.max(0, prevIndex === index ? 0 : prevIndex - 1));
+        // Adjust selectedLayerIndex
+        setSelectedLayerIndex((prevIndex) => {
+            const newIndex = Math.max(0, prevIndex > index ? prevIndex - 1 : prevIndex);
+            if (index === prevIndex) {
+                setSelectedFeatures((prev) => ({
+                    ...prev,
+                    [newIndex]: null,
+                }));
+            }
+            return newIndex;
+        });
     };
 
     return (
@@ -72,7 +82,8 @@ const GeoJsonMap = () => {
                         <FeatureList
                             layers={layers}
                             selectedLayerIndex={selectedLayerIndex}
-                            setSelectedFeature={handleSetSelectedFeature}
+                            setSelectedFeature={setSelectedFeature} // Pass the setter function
+                            selectedFeature={selectedFeatures[selectedLayerIndex] || null} // Pass current feature for this layer
                         />
                     </div>
 
@@ -82,8 +93,8 @@ const GeoJsonMap = () => {
                             <MapDisplay
                                 layers={layers}
                                 selectedLayerIndex={selectedLayerIndex}
-                                selectedFeature={selectedFeatures[selectedLayerIndex] || null}
-                                setSelectedFeature={handleSetSelectedFeature}
+                                selectedFeature={selectedFeatures[selectedLayerIndex] || null} // Pass current feature for this layer
+                                setSelectedFeature={setSelectedFeature} // Pass the setter function
                             />
                         </ErrorBoundary>
                     </div>

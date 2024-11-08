@@ -82,12 +82,12 @@ const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFe
         const isSelected = selectedFeature && selectedFeature.properties.id === feature.properties.id;
 
         if (feature.geometry?.type === "LineString") {
-            return { color: isSelected ? 'yellow' : 'green', weight: isSelected ? 6 : 4 };
+            return { color: isSelected ? 'green' : 'blue', weight: isSelected ? 6 : 4 };
         }
         if (feature.geometry?.type === "Polygon") {
-            return { color: isSelected ? 'yellow' : 'blue', weight: isSelected ? 4 : 2, fillOpacity: 0.3 };
+            return { color: isSelected ? 'green' : 'blue', weight: isSelected ? 4 : 2, fillOpacity: 0.3 };
         }
-        return { color: isSelected ? 'yellow' : 'red' };
+        return { color: isSelected ? 'green' : 'blue' };
     };
 
     const onEachFeature = (feature, layer) => {
@@ -139,7 +139,6 @@ const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFe
                 />
             )}
 
-            //Conditionally render popup and centering only if a feature is selected
             {selectedFeature && selectedFeature.geometry && (
                 <>
                     <CenterMapOnFeature
