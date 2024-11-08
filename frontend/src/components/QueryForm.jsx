@@ -48,7 +48,7 @@ const QueryForm = ({ addLayer, setError }) => {
                 <Grid item xs={2}>
                     <input type="file" accept=".geojson,.json" onChange={handleFileUpload} style={{ display: 'none' }} id="upload-file" />
                     <label htmlFor="upload-file">
-                        <Button variant="contained" color="secondary" component="span" fullWidth>Upload GeoJSON</Button>
+                        <Button variant="contained" color="primary" component="span" fullWidth>Upload a File</Button>
                     </label>
                 </Grid>
             </Grid>

@@ -5,7 +5,7 @@ const Header = () => (
     <AppBar position="static">
         <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-                GeoJSON Layer Viewer
+                GeoJSON Viewer
             </Typography>
         </Toolbar>
     </AppBar>
