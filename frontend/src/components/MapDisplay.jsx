@@ -91,7 +91,13 @@ const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFe
     };
 
     const onEachFeature = (feature, layer) => {
-        layer.on('click', () => setSelectedFeature(feature));
+        layer.on('click', () => {
+            if (selectedFeature && selectedFeature.properties.id === feature.properties.id) {
+                setSelectedFeature(null); // Deselect if already selected
+            } else {
+                setSelectedFeature(feature); // Select new feature
+            }
+        });
     };
 
     useEffect(() => {
