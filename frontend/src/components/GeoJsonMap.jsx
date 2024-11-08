@@ -22,7 +22,6 @@ const GeoJsonMap = () => {
         setSelectedLayerIndex(layers.length);
     };
 
-    // Handle feature selection, updating per layer
     const handleSetSelectedFeature = (feature) => {
         setSelectedFeatures((prevSelectedFeatures) => ({
             ...prevSelectedFeatures,
@@ -30,20 +29,33 @@ const GeoJsonMap = () => {
         }));
     };
 
+    const handleDeleteLayer = (index) => {
+        // Remove the layer
+        setLayers((prevLayers) => prevLayers.filter((_, i) => i !== index));
+
+        // Remove the selected feature for the deleted layer
+        setSelectedFeatures((prevSelectedFeatures) => {
+            const updatedFeatures = { ...prevSelectedFeatures };
+            delete updatedFeatures[index];
+            return updatedFeatures;
+        });
+
+        // Adjust selectedLayerIndex to ensure it remains valid
+        setSelectedLayerIndex((prevIndex) => Math.max(0, prevIndex === index ? 0 : prevIndex - 1));
+    };
+
     return (
         <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
             <Header />
             <Container maxWidth="xl" style={{ marginTop: '20px', flexGrow: 1 }}>
-                <QueryForm
-                    addLayer={handleAddLayer}
-                    setError={setError}
-                />
+                <QueryForm addLayer={handleAddLayer} setError={setError} />
                 {error && <div>{error}</div>}
                 <LayerTabs
                     layers={layers}
                     selectedLayerIndex={selectedLayerIndex}
                     setSelectedLayerIndex={setSelectedLayerIndex}
                     setLayers={setLayers}
+                    onDeleteLayer={handleDeleteLayer} // Pass delete handler to LayerTabs
                 />
 
                 {/* Split component for resizable List, Map, and Feature sections */}
