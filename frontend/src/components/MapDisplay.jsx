@@ -139,10 +139,9 @@ const MapDisplay = ({ layers, selectedLayerIndex, selectedFeature, setSelectedFe
                 />
             )}
 
-            {/* Conditionally render popup and centering only if a feature is selected */}
+            //Conditionally render popup and centering only if a feature is selected
             {selectedFeature && selectedFeature.geometry && (
                 <>
-                    <PopupContent feature={selectedFeature} />
                     <CenterMapOnFeature
                         coordinates={selectedFeature.geometry.coordinates}
                         geometryType={selectedFeature.geometry.type}

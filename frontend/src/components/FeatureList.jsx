@@ -15,7 +15,7 @@ const FeatureList = ({ layers, selectedLayerIndex, setSelectedFeature }) => {
                 {currentLayer.features.map((feature, index) => {
                     const geometryType = feature.geometry?.type;
                     const coordinates = feature.geometry?.coordinates;
-                    const message = feature.properties?.message || "No message available";
+                    const message = feature.properties?.type || "No type available";
 
                     return (
                         <React.Fragment key={index}>

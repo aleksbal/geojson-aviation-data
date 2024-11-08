@@ -9,7 +9,7 @@ const CenterMapOnFeature = ({ coordinates, geometryType }) => {
 
         if (geometryType === 'Point') {
             // Center map on a single point
-            map.flyTo([coordinates[1], coordinates[0]], 14);
+            map.flyTo([coordinates[1], coordinates[0]], 10);
         } else {
             // Fit bounds for LineString, Polygon, etc.
             const latLngs = geometryType === 'LineString' || geometryType === 'Polygon'
