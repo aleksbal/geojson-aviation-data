@@ -1,10 +1,24 @@
 // src/components/FeatureList.jsx
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { List, ListItem, ListItemText, Divider, Typography } from '@mui/material';
 
 const FeatureList = ({ layers, selectedLayerIndex, setSelectedFeature }) => {
+    const [selectedIndexes, setSelectedIndexes] = useState({}); // Track selected feature index per layer
+
     const currentLayer = layers[selectedLayerIndex];
     if (!currentLayer) return null;
+
+    // Update selection when the active layer changes
+    const selectedIndex = selectedIndexes[selectedLayerIndex] ?? null;
+
+    const handleItemClick = (feature, index) => {
+        setSelectedFeature(feature);
+        // Set the selected index for the active layer
+        setSelectedIndexes((prevIndexes) => ({
+            ...prevIndexes,
+            [selectedLayerIndex]: index,
+        }));
+    };
 
     return (
         <div style={{ height: '70vh', overflowY: 'auto', paddingRight: '10px' }}>
@@ -21,10 +35,11 @@ const FeatureList = ({ layers, selectedLayerIndex, setSelectedFeature }) => {
                         <React.Fragment key={index}>
                             <ListItem
                                 button
-                                onClick={() => {
-                                    setSelectedFeature(feature);
+                                onClick={() => handleItemClick(feature, index)}
+                                style={{
+                                    marginBottom: '10px',
+                                    backgroundColor: selectedIndex === index ? '#e0e0e0' : 'transparent', // Highlight only if selected
                                 }}
-                                style={{ marginBottom: '10px' }}
                             >
                                 <ListItemText
                                     primary={message}
