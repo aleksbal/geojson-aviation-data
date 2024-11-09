@@ -59,3 +59,28 @@ out/
 /frontend/.pnp.js
 /frontend/.DS_Store
 /frontend/.idea/
+
+
+# Ignore build artifacts in the frontend folder
+/client/node_modules/
+/client/build/
+/client/dist/
+/client/.cache/
+/client/tmp/
+/client/temp/
+/client/coverage/
+
+# Ignore environment files in the frontend folder
+/client/.env
+/client/.env.*.local
+
+# Ignore log files in the frontend folder
+/client/npm-debug.log*
+/client/yarn-debug.log*
+/client/yarn-error.log*
+
+# Ignore specific editor and config files in frontend
+/client/.pnp/
+/client/.pnp.js
+/client/.DS_Store
+/client/.idea/

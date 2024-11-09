@@ -1,0 +1,26 @@
+/* src/App.css */
+
+.split-container {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+}
+
+.pane {
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensures each pane fills the split container */
+}
+
+.map-pane {
+  flex-grow: 1;
+  height: 100%;
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  position: relative;
+}
+
