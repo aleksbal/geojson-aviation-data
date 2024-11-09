@@ -9,12 +9,14 @@
 }
 
 .leaflet-container {
-  height: 100%;
-  width: 100%;
   position: relative;
   z-index: 0;
 }
 
-.leaflet-container {
-  z-index: 0; /* or a higher value if needed */
+.gutter {
+  background-color: #e5e7eb; /* Tailwind's gray-300 color */
+}
+
+.gutter.gutter-horizontal {
+  cursor: col-resize;
 }

@@ -11,6 +11,11 @@ export const MapProvider = ({ children }) => {
   const [selectedFeatureId, setSelectedFeatureId] = useState(null);
   const [error, setError] = useState(null);
 
+  const addLayer = (newLayer) => {
+    setLayers((prevLayers) => [...prevLayers, newLayer]);
+    setSelectedLayerId(newLayer.id); // Select the new layer by default
+  };
+
   return (
     <MapContext.Provider
       value={{
