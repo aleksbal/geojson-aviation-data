@@ -20,7 +20,7 @@ const App = () => {
       {/* Split pane layout with Tailwind styling */}
       <Split
         className="flex h-[calc(100vh-4rem)]" // Adjust height to fill screen minus QueryForm's height
-        sizes={[25, 50, 25]}
+        sizes={[15, 65, 20]}
         minSize={150}
         gutterSize={8} // Width of the gutter between panes
         direction="horizontal"

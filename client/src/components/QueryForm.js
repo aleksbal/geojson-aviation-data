@@ -1,48 +1,46 @@
 // src/components/QueryForm.js
 import React, { useState } from 'react';
 import { useMapContext } from '../context/MapContext';
+import ArrowUpTrayIcon from '@heroicons/react/24/outline/ArrowUpTrayIcon';
 
 const QueryForm = () => {
   const [query, setQuery] = useState('');
-  const [file, setFile] = useState('');
-  const { setLayers, addLayer, deleteLayer, setError, setSelectedLayerId } = useMapContext();
+  const { setLayers, setSelectedLayerId } = useMapContext();
 
-  // Helper function to create a layer from data and add it to the context
-  const createLayerFromData = (data, label) => {
-    // Ensure each feature has a unique id
-    const features = (data.features || [data]).map((feature, index) => {
-      if (!feature.properties) feature.properties = {};
-      if (!feature.properties.id) feature.properties.id = Date.now() + index; // Assign unique ID
-      return feature;
-    });
-
-    const newLayer = { id: Date.now(), label, features }; // Use label for layer naming
-    setLayers((prevLayers) => [...prevLayers, newLayer]);
-    setSelectedLayerId(newLayer.id);
-  };
-
-  // Fetch data using API and create a new layer
   const fetchLayerData = async (query) => {
     try {
       const response = await fetch(query);
       if (!response.ok) throw new Error(`API call failed with status: ${response.status}`);
       const data = await response.json();
-      createLayerFromData(data, query); // Use `query` as the label
+      const features = (data.features || [data]).map((feature, index) => {
+        if (!feature.properties) feature.properties = {};
+        if (!feature.properties.id) feature.properties.id = Date.now() + index;
+        return feature;
+      });
+
+      const newLayer = { id: Date.now(), label: query, features };
+      setLayers((prevLayers) => [...prevLayers, newLayer]);
+      setSelectedLayerId(newLayer.id);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
 
-  // Handle file upload and create a new layer
   const handleFileUpload = (event) => {
     const uploadedFile = event.target.files[0];
-    setFile(uploadedFile.name); // Set the file name for layer labeling
-
     const reader = new FileReader();
     reader.onload = (e) => {
       try {
         const data = JSON.parse(e.target.result);
-        createLayerFromData(data, uploadedFile.name); // Use file name as the label
+        const features = (data.features || [data]).map((feature, index) => {
+          if (!feature.properties) feature.properties = {};
+          if (!feature.properties.id) feature.properties.id = Date.now() + index;
+          return feature;
+        });
+
+        const newLayer = { id: Date.now(), label: uploadedFile.name, features };
+        setLayers((prevLayers) => [...prevLayers, newLayer]);
+        setSelectedLayerId(newLayer.id);
       } catch (error) {
         console.error("Error parsing file:", error);
       }
@@ -62,12 +60,12 @@ const QueryForm = () => {
         placeholder="Enter Query"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="flex-grow p-2 border border-gray-300 rounded"
+        className="flex-grow p-2 border border-gray-300 rounded bg-gray-100 text-gray-700"
       />
 
       <button
         type="submit"
-        className="bg-blue-500 text-white rounded px-4 py-2 hover:bg-blue-600"
+        className="bg-gray-400 text-white rounded px-4 py-2 hover:bg-gray-500"
       >
         Submit
       </button>
@@ -80,8 +78,8 @@ const QueryForm = () => {
         id="upload-file"
       />
       <label htmlFor="upload-file">
-        <span className="bg-green-500 text-white rounded px-4 py-2 cursor-pointer hover:bg-green-600">
-          Upload a File
+        <span className="flex items-center justify-center bg-gray-400 text-white rounded-full p-2 cursor-pointer hover:bg-gray-500">
+          <ArrowUpTrayIcon className="h-5 w-5 text-white" />
         </span>
       </label>
     </form>
