@@ -41,7 +41,7 @@ const FeatureList = () => {
                 }
               }}
             >
-              {feature.geometry?.type || 'Unknown Type'}:
+              {feature.properties?.type || 'Unknown Type'}:
               {feature.geometry?.coordinates ? JSON.stringify(feature.geometry.coordinates) : 'No coordinates available'}
             </li>
           ))}
