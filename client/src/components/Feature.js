@@ -29,14 +29,7 @@ const FeatureComponent = () => {
           {Object.entries(selectedFeature.properties).map(([key, value]) => (
             <tr key={key}>
               <td className="border-b border-gray-200 px-2 py-1">{key}</td>
-              <td className="border-b border-gray-200 px-2 py-1">
-                {/* Check if the value is an object and handle accordingly */}
-                {typeof value === 'object' && value !== null ? (
-                  <pre>{JSON.stringify(value, null, 2)}</pre> // Display objects as JSON
-                ) : (
-                  value
-                )}
-              </td>
+              <td className="border-b border-gray-200 px-2 py-1"></td>
             </tr>
           ))}
         </tbody>
