@@ -16,6 +16,25 @@ export const MapProvider = ({ children }) => {
     setSelectedLayerId(newLayer.id); // Select the new layer by default
   };
 
+  const deleteLayer = (layerId) => {
+    setLayers((prevLayers) => {
+      const updatedLayers = prevLayers.filter(layer => layer.id !== layerId);
+
+      // Reset selections if no layers are left
+      if (updatedLayers.length === 0) {
+        setSelectedLayerId(null);
+        setSelectedFeatureId(null);
+      } else {
+        // Set the next available layer as selected if the current layer is deleted
+        if (selectedLayerId === layerId) {
+          setSelectedLayerId(updatedLayers[0].id);
+        }
+      }
+
+      return updatedLayers;
+    });
+  };
+
   return (
     <MapContext.Provider
       value={{
@@ -25,6 +44,8 @@ export const MapProvider = ({ children }) => {
         setSelectedLayerId,
         selectedFeatureId,
         setSelectedFeatureId,
+        addLayer,
+        deleteLayer,
         error,
         setError,
       }}

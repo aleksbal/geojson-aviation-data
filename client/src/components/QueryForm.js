@@ -5,7 +5,7 @@ import { useMapContext } from '../context/MapContext';
 const QueryForm = () => {
   const [query, setQuery] = useState('');
   const [file, setFile] = useState('');
-  const { setLayers, setSelectedLayerId } = useMapContext();
+  const { setLayers, addLayer, deleteLayer, setError, setSelectedLayerId } = useMapContext();
 
   // Helper function to create a layer from data and add it to the context
   const createLayerFromData = (data, label) => {
