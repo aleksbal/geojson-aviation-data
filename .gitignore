@@ -79,6 +79,8 @@ out/
 /client/yarn-debug.log*
 /client/yarn-error.log*
 
+/client/package-lock.json
+
 # Ignore specific editor and config files in frontend
 /client/.pnp/
 /client/.pnp.js
