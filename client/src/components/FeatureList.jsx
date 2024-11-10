@@ -32,17 +32,17 @@ const FeatureList = () => {
   };
 
   return (
-    <div className="p-4 overflow-y-auto h-full scroll-smooth">
+    <div className="p-4 overflow-y-auto h-full scroll-smooth pr-4"> {/* Add padding-right here */}
       <h3 className="text-md font-semibold mb-2 text-gray-700 antialiased">Feature List</h3>
       {selectedLayer.features.length > 0 ? (
-        <ul className="list-none p-0 pr-1 mb-0"> {/* Reduce padding-right and remove margin-bottom */}
+        <ul className="list-none p-0 mb-0">
           {selectedLayer.features.map((feature) => (
             <li
-              key={feature.properties?.id || feature.id} // Ensure each key is unique
-              ref={(el) => (featureRefs.current[feature.properties?.id] = el)} // Store ref in featureRefs
-              className={`p-1 cursor-pointer rounded w-full ${
+              key={feature.properties?.id || feature.id}
+              ref={(el) => (featureRefs.current[feature.properties?.id] = el)}
+              className={`p-1 cursor-pointer rounded w-full overflow-hidden text-ellipsis pr-2 ${
                 feature.properties?.id === selectedFeatureId ? 'bg-gray-300' : 'bg-white'
-              } hover:bg-gray-200 text-gray-600 font-light text-xs antialiased`} // Reduced padding on list items
+              } text-gray-600 font-light text-xs antialiased hover:bg-gray-200`}
               onClick={() => {
                 if (feature.properties?.id !== selectedFeatureId) {
                   setSelectedFeatureId(feature.properties?.id);
