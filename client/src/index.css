@@ -20,3 +20,10 @@
 .gutter.gutter-horizontal {
   cursor: col-resize;
 }
+
+/* Disable overscroll behavior for the entire page */
+html, body {
+  overflow: hidden; /* Prevents page scroll */
+  overscroll-behavior: none; /* Disables the elastic bounce effect */
+  height: 100%; /* Ensures the body takes the full viewport height */
+}
