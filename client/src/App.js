@@ -1,4 +1,3 @@
-// src/App.js
 import React from 'react';
 import Split from 'react-split';
 import { MapProvider } from './context/MapContext';
@@ -12,17 +11,21 @@ const App = () => {
   return (
     <MapProvider>
       {/* Top section with QueryForm */}
-      <div className="p-4 bg-gray-100">
+      <div className="p-4 bg-gray-100 sticky top-0 z-10">
         <QueryForm />
       </div>
-      <Tabs />
+
+      {/* Tabs section, fixed between QueryForm and Split */}
+      <div className="bg-white shadow sticky top-[4rem] z-10"> {/* Adjusts based on QueryForm height */}
+        <Tabs />
+      </div>
 
       {/* Split pane layout with Tailwind styling */}
       <Split
-        className="flex h-[calc(100vh-4rem)]" // Adjust height to fill screen minus QueryForm's height
+        className="flex h-[calc(100vh-8rem)] overflow-hidden" // Adjust height to account for QueryForm and Tabs
         sizes={[15, 65, 20]}
         minSize={150}
-        gutterSize={8} // Width of the gutter between panes
+        gutterSize={4} // Width of the gutter between panes
         direction="horizontal"
         gutterAlign="center"
         cursor="col-resize" // Use col-resize cursor for horizontal resizing
