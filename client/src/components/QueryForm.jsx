@@ -54,18 +54,21 @@ const QueryForm = () => {
   };
 
   return (
-    <form onSubmit={handleQuerySubmit} className="flex gap-4 w-full">
+    <form
+      onSubmit={handleQuerySubmit}
+      className="flex gap-4 w-full h-full bg-white p-1 border-b border-gray-200" // Changed background, padding, and added border
+    >
       <input
         type="text"
         placeholder="Enter Query"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
-        className="flex-grow p-2 border border-gray-300 rounded bg-gray-100 text-gray-700"
+        className="flex-grow p-2 border border-gray-300 rounded text-gray-700" // Removed gray background on input
       />
 
       <button
         type="submit"
-        className="bg-gray-400 text-white rounded px-4 py-2 hover:bg-gray-500"
+        className="bg-gray-400 text-white rounded px-4 py-1 hover:bg-gray-500" // Reduced padding on button for lower height
       >
         Submit
       </button>
@@ -87,3 +90,4 @@ const QueryForm = () => {
 };
 
 export default QueryForm;
+
