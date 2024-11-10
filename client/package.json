@@ -1,6 +1,7 @@
 {
   "name": "frontend",
   "version": "0.0.1",
+  "homepage": "https://aleksbal.github.io/geojson-aviation-data",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.0",
@@ -17,6 +18,8 @@
     "react-split": "^2.0.14"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "HTTPS=true react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -37,6 +40,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.4.20",
+    "gh-pages": "^6.2.0",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14"
   }

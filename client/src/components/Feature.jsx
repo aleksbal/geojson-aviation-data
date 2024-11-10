@@ -16,11 +16,11 @@ const FeatureComponent = () => {
 
   return (
     <div className="p-4">
-      <h3 className="text-lg font-semibold mb-2 text-gray-700 antialiased">Feature Properties</h3>
+      <h3 className="text-lg font-semibold mb-2 text-gray-700 antialiased">Properties</h3>
       <table className="w-full text-gray-600 font-light antialiased">
         <thead>
           <tr>
-            <th className="text-left font-semibold text-gray-700">Property</th>
+            <th className="text-left font-semibold text-gray-700">Name</th>
             <th className="text-left font-semibold text-gray-700">Value</th>
           </tr>
         </thead>
