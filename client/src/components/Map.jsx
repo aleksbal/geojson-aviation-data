@@ -1,6 +1,6 @@
 // src/components/Map.js
 import React, { useEffect, useRef } from 'react';
-import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
+import { MapContainer, TileLayer, GeoJSON, ScaleControl } from 'react-leaflet';
 import { useMapContext } from '../context/MapContext';
 import L from 'leaflet';
 
@@ -113,6 +113,7 @@ const MapComponent = () => {
           url="https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png"
           attribution='&copy; <a href="https://carto.com/">CartoDB</a> contributors'
         />
+        <ScaleControl position="bottomright" imperial={false} /> {/* Use `imperial={true}` for both metric and imperial */}
       </MapContainer>
     </div>
   );

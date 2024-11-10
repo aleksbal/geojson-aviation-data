@@ -1,4 +1,3 @@
-// src/components/FeatureList.js
 import React, { useRef, useEffect } from 'react';
 import { useMapContext } from '../context/MapContext';
 
@@ -18,21 +17,32 @@ const FeatureList = () => {
   }, [selectedFeatureId]);
 
   if (!selectedLayer) {
-    return <p className="text-gray-500 font-light antialiased">No features available</p>;
+    return <p className="text-gray-500 font-light text-xs antialiased">No features available</p>;
   }
+
+  const formatCoordinates = (coordinates) => {
+    const findFirstCoordinate = (coords) => {
+      if (Array.isArray(coords[0])) {
+        return findFirstCoordinate(coords[0]); // Continue drilling down if it's an array
+      }
+      return coords; // Return the coordinate if it's not nested further
+    };
+    const firstCoordinate = findFirstCoordinate(coordinates);
+    return `${JSON.stringify(firstCoordinate)}...`; // Format and add ellipsis for more data
+  };
 
   return (
     <div className="p-4 overflow-y-auto h-full scroll-smooth">
-      <h3 className="text-lg font-semibold mb-2 text-gray-700 antialiased">Feature List</h3>
+      <h3 className="text-md font-semibold mb-2 text-gray-700 antialiased">Feature List</h3>
       {selectedLayer.features.length > 0 ? (
-        <ul className="list-none p-0">
+        <ul className="list-none p-0 pr-1 mb-0"> {/* Reduce padding-right and remove margin-bottom */}
           {selectedLayer.features.map((feature) => (
             <li
               key={feature.properties?.id || feature.id} // Ensure each key is unique
               ref={(el) => (featureRefs.current[feature.properties?.id] = el)} // Store ref in featureRefs
-              className={`p-2 cursor-pointer rounded ${
+              className={`p-1 cursor-pointer rounded w-full ${
                 feature.properties?.id === selectedFeatureId ? 'bg-gray-300' : 'bg-white'
-              } text-gray-600 font-light antialiased`}
+              } hover:bg-gray-200 text-gray-600 font-light text-xs antialiased`} // Reduced padding on list items
               onClick={() => {
                 if (feature.properties?.id !== selectedFeatureId) {
                   setSelectedFeatureId(feature.properties?.id);
@@ -42,16 +52,24 @@ const FeatureList = () => {
                 console.log("Selected Feature ID:", selectedFeatureId);
               }}
             >
-              {feature.properties?.type || 'Unknown Type'}:
-              {feature.geometry?.coordinates ? JSON.stringify(feature.geometry.coordinates) : 'No coordinates available'}
+              {/* Feature type */}
+              {feature.properties?.type || 'Unknown Type'}
+
+              {/* Feature geometry type and formatted coordinates */}
+              <br />
+              {feature.geometry?.type || 'Unknown Geometry Type'}:
+              {feature.geometry?.coordinates
+                ? formatCoordinates(feature.geometry.coordinates)
+                : 'No coordinates available'}
             </li>
           ))}
         </ul>
       ) : (
-        <p className="text-gray-500 font-light antialiased">No features available in this layer</p>
+        <p className="text-gray-500 font-light text-xs antialiased">No features available in this layer</p>
       )}
     </div>
   );
 };
 
 export default FeatureList;
+
