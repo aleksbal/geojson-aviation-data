@@ -98,8 +98,8 @@ const MapComponent = () => {
   return (
     <div className="h-full w-full">
       <MapContainer
-        center={[51.505, -0.09]}
-        zoom={13}
+        center={[54.54, 25.19]}
+        zoom={4}
         className="h-full w-full"
         whenCreated={(mapInstance) => {
           geoJsonLayerRef.current = L.geoJSON(null, {

@@ -18,12 +18,12 @@ const FeatureList = () => {
   }, [selectedFeatureId]);
 
   if (!selectedLayer) {
-    return <p className="text-gray-500">No features available</p>;
+    return <p className="text-gray-500 font-light antialiased">No features available</p>;
   }
 
   return (
     <div className="p-4 overflow-y-auto h-full scroll-smooth">
-      <h3 className="text-lg font-semibold mb-2">Feature List</h3>
+      <h3 className="text-lg font-semibold mb-2 text-gray-700 antialiased">Feature List</h3>
       {selectedLayer.features.length > 0 ? (
         <ul className="list-none p-0">
           {selectedLayer.features.map((feature) => (
@@ -32,13 +32,14 @@ const FeatureList = () => {
               ref={(el) => (featureRefs.current[feature.properties?.id] = el)} // Store ref in featureRefs
               className={`p-2 cursor-pointer rounded ${
                 feature.properties?.id === selectedFeatureId ? 'bg-gray-300' : 'bg-white'
-              } hover:bg-gray-200`}
+              } text-gray-600 font-light antialiased`}
               onClick={() => {
                 if (feature.properties?.id !== selectedFeatureId) {
-                  setSelectedFeatureId(feature.properties?.id); // Select new feature
+                  setSelectedFeatureId(feature.properties?.id);
                 } else {
-                  setSelectedFeatureId(null); // Deselect if clicked again
+                  setSelectedFeatureId(null);
                 }
+                console.log("Selected Feature ID:", selectedFeatureId);
               }}
             >
               {feature.properties?.type || 'Unknown Type'}:
@@ -47,11 +48,10 @@ const FeatureList = () => {
           ))}
         </ul>
       ) : (
-        <p className="text-gray-500">No features available in this layer</p>
+        <p className="text-gray-500 font-light antialiased">No features available in this layer</p>
       )}
     </div>
   );
 };
 
 export default FeatureList;
-
