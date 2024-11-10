@@ -1,0 +1,88 @@
+HELP.md
+.gradle
+build/
+!gradle/wrapper/gradle-wrapper.jar
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+bin/
+!**/src/main/**/bin/
+!**/src/test/**/bin/
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+### VS Code ###
+.vscode/
+
+# Ignore build artifacts in the frontend folder
+/frontend/node_modules/
+/frontend/build/
+/frontend/dist/
+/frontend/.cache/
+/frontend/tmp/
+/frontend/temp/
+/frontend/coverage/
+
+# Ignore environment files in the frontend folder
+/frontend/.env
+/frontend/.env.*.local
+
+# Ignore log files in the frontend folder
+/frontend/npm-debug.log*
+/frontend/yarn-debug.log*
+/frontend/yarn-error.log*
+
+# Ignore specific editor and config files in frontend
+/frontend/.pnp/
+/frontend/.pnp.js
+/frontend/.DS_Store
+/frontend/.idea/
+
+
+# Ignore build artifacts in the frontend folder
+/client/node_modules/
+/client/build/
+/client/dist/
+/client/.cache/
+/client/tmp/
+/client/temp/
+/client/coverage/
+
+# Ignore environment files in the frontend folder
+/client/.env
+/client/.env.*.local
+
+# Ignore log files in the frontend folder
+/client/npm-debug.log*
+/client/yarn-debug.log*
+/client/yarn-error.log*
+
+/client/package-lock.json
+
+# Ignore specific editor and config files in frontend
+/client/.pnp/
+/client/.pnp.js
+/client/.DS_Store
+/client/.idea/
