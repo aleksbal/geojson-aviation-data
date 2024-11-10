@@ -1,7 +1,7 @@
 {
   "name": "frontend",
   "version": "0.0.1",
-  "homepage": "https://aleksbal.github.io/geojson-aviation-data",
+  "homepage": "https://aleksbal.github.io/geojsonic",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.7.0",
