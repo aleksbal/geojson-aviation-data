@@ -1,6 +1,6 @@
-# GeoJSON Backend Application
+# GeoJSONic Application
 
-This project demonstrates a web-based application and (headless) service for displaying and interacting with GeoJSON data on a Leaflet map. The app allows users to query data from the API, upload files, or paste GeoJSON data directly into the application, creating dynamic map layers with full control over layout and interactions.
+This showcase project demonstrates a web-based application and (headless) service for displaying and interacting with GeoJSON data on a Leaflet map. The app allows users to query data from the API, upload files, or paste GeoJSON data directly into the application, creating dynamic map layers with full control over layout and interactions.
 
 ## Backend Features
 
