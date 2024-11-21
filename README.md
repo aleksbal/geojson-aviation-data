@@ -4,9 +4,7 @@ This showcase project demonstrates a web-based application and (headless) servic
 
 ## Backend Features
 
-The backend headless server's aim is to demonstrates simple microservice architecture for an aeronautical information system serving GeoJSON encoded aueronautical data. It is based on MongoDB/SpringBoot solution stack. The RESTful API provides access to several types of data such as NOTAMs, airports, flightplans, NAVAIDs etc. encoded in GeoJSON.
-
-Currently only several test NOTAMs have correct JSON geometries. 
+The backend headless server's aim is to demonstrates simple microservice architecture for an aeronautical information service serving GeoJSON encoded aeronautical data. It is based on MongoDB/SpringBoot stack. The RESTful API provides access to several types of data such as NOTAMs, Airports, Flight Plans, NAVAIDs etc. encoded in GeoJSON.
 
 Once the application is up and running locally the Swagger API description will be available at http://localhost:9091/swagger-ui/
 
@@ -31,8 +29,8 @@ http://localhost:9091/notamsarea?lon=-2.181943&lat=47.943889&d=1
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/yourusername/geojson-map-app.git
-   cd geojson-map-app
+   git clone https://github.com/yourusername/geojsonic.git
+   cd geojsonic
    ```
 
 2. Install dependencies:
