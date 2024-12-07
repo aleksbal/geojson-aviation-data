@@ -27,3 +27,8 @@ html, body {
   overscroll-behavior: none; /* Disables the elastic bounce effect */
   height: 100%; /* Ensures the body takes the full viewport height */
 }
+
+.split-horizontal {
+  display: flex;
+  flex-direction: row;
+}
